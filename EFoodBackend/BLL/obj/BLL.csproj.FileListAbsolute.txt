@@ -1,0 +1,49 @@
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.dll
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.pdb
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.dll
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.pdb
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\ResolveAssemblyReference.cache
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.dll
+C:\Programacion 3\Sesion8ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.pdb
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.dll
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.pdb
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.dll
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.pdb
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\ResolveAssemblyReference.cache
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.dll
+C:\Programacion 3\Sesion9ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.pdb
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.dll
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.pdb
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.dll
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.pdb
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\ResolveAssemblyReference.cache
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.dll
+C:\Programacion 3\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.pdb
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.dll
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.pdb
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.dll
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.pdb
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.dll
+F:\Progra 5\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.pdb
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.dll
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\BLL.pdb
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.dll
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\bin\Debug\DAL.pdb
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.dll
+C:\Documents and Settings\Laboratorios\Desktop\Sesion10ASP.NetProgramacion5\SesionBaseDatos\BLL\obj\Debug\BLL.pdb
+F:\Progra 5\SesionBaseDatos\BLL\bin\Debug\BLL.dll
+F:\Progra 5\SesionBaseDatos\BLL\bin\Debug\BLL.pdb
+F:\Progra 5\SesionBaseDatos\BLL\bin\Debug\DAL.dll
+F:\Progra 5\SesionBaseDatos\BLL\bin\Debug\DAL.pdb
+F:\Progra 5\SesionBaseDatos\BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\Progra 5\SesionBaseDatos\BLL\obj\Debug\BLL.dll
+F:\Progra 5\SesionBaseDatos\BLL\obj\Debug\BLL.pdb
+D:\Programación Básica\Progra 5\Semana 12\BLL\bin\Debug\BLL.dll
+D:\Programación Básica\Progra 5\Semana 12\BLL\bin\Debug\BLL.pdb
+D:\Programación Básica\Progra 5\Semana 12\BLL\bin\Debug\DAL.dll
+D:\Programación Básica\Progra 5\Semana 12\BLL\bin\Debug\DAL.pdb
+D:\Programación Básica\Progra 5\Semana 12\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\Programación Básica\Progra 5\Semana 12\BLL\obj\Debug\BLL.dll
+D:\Programación Básica\Progra 5\Semana 12\BLL\obj\Debug\BLL.pdb

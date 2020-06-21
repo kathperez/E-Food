@@ -1,0 +1,103 @@
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\bin\Debug\BLL.dll
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\bin\Debug\BLL.pdb
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\bin\Debug\DAL.dll
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\bin\Debug\DAL.pdb
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\obj\Debug\BLL.dll
+C:\Users\DannyFrancisco\Desktop\Semana 12\BLL\obj\Debug\BLL.pdb
+C:\Pruba de Rest\RestApiDemo\BLL\bin\Debug\BLL.dll
+C:\Pruba de Rest\RestApiDemo\BLL\bin\Debug\BLL.pdb
+C:\Pruba de Rest\RestApiDemo\BLL\bin\Debug\DAL.dll
+C:\Pruba de Rest\RestApiDemo\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Pruba de Rest\RestApiDemo\BLL\bin\Debug\DAL.pdb
+C:\Pruba de Rest\RestApiDemo\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Pruba de Rest\RestApiDemo\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Pruba de Rest\RestApiDemo\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Pruba de Rest\RestApiDemo\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Pruba de Rest\RestApiDemo\BLL\obj\Debug\BLL.dll
+C:\Pruba de Rest\RestApiDemo\BLL\obj\Debug\BLL.pdb
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\bin\Debug\BLL.dll
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\bin\Debug\BLL.pdb
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\bin\Debug\DAL.dll
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\bin\Debug\DAL.pdb
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\obj\Debug\BLL.dll
+C:\LEC07\RestAPIPlantas\RestAPIPlantas\BLL\obj\Debug\BLL.pdb
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\bin\Debug\BLL.dll
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\bin\Debug\BLL.pdb
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\bin\Debug\DAL.dll
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\bin\Debug\DAL.pdb
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\obj\Debug\BLL.dll
+C:\Users\carri\OneDrive\Escritorio\EFoodIntranet\BLL\obj\Debug\BLL.pdb
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\bin\Debug\BLL.dll
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\bin\Debug\BLL.pdb
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\bin\Debug\DAL.dll
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\bin\Debug\DAL.pdb
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\obj\Debug\BLL.dll
+C:\Users\karla\Desktop\Desarrollo\EFoodIntranet\BLL\obj\Debug\BLL.pdb
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.dll
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.pdb
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.dll
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.pdb
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.dll
+C:\Users\carri\OneDrive\Escritorio\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.pdb
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.dll
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.pdb
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.dll
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.pdb
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.dll
+C:\Users\karla\Desktop\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.pdb
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.dll
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.pdb
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.dll
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.pdb
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.dll
+C:\Users\karla\Desktop\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.pdb
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.dll
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\BLL.pdb
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.dll
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\DAL.pdb
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.dll
+C:\Users\karla\Desktop\Avance final\new\Avance final\Primer avance\EFoodIntranet\BLL\obj\Debug\BLL.pdb
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\bin\Debug\BLL.dll
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\bin\Debug\BLL.pdb
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\bin\Debug\DAL.dll
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\bin\Debug\DAL.pdb
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\obj\Debug\BLL.dll
+C:\Users\karla\Desktop\Entregable2\EFoodBackend\BLL\obj\Debug\BLL.pdb
