@@ -50,8 +50,9 @@ namespace EFoodIntranet.Controllers
         }
 
         // DELETE: api/Consecutivo/5
-        public void Delete(int id)
+        public string Delete(int id_conse, string descripcion, [FromBody] Consecutivo consecutivo)
         {
+            return consecutivo.eliminar_consecutivo(id_conse, descripcion) ? "Se eliminó el consecu con éxito" : "No se eliminó el tiquete de descuento";
         }
     }
 }

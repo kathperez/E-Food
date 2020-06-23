@@ -95,56 +95,41 @@ namespace BLL
             }
 
         }
-        //public string carga_lista_consecutivos2()
-        //{
-        //    conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
-        //    if (conexion == null)
-        //    {
-        //        return null;
-        //    }
-        //    else
-        //    {
-        //        sql = "stp_consecutivo_ver_SinCon ";
-        //        ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
-        //        if (numero_error != 0)
-        //        {
-        //            return null;
-        //        }
-        //        else
-        //        {
-        //            return JsonConvert.SerializeObject(ds.Tables[0]);
-        //        }
-        //    }
 
-        //}
-        //public string carga_lista_consecutivo_prefijo(int consecutivo)
-        //{
-        //    conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
-        //    if (conexion == null)
-        //    {
-        //        //insertar en la table de errores
-        //        //  HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
-        //        return null;
-        //    }
-        //    else
-        //    {
-        //        sql = "stp_consecutivo_verPrefijo";
-        //        ParamStruct[] parametros = new ParamStruct[1];
-        //        cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@cod_consec", SqlDbType.VarChar, consecutivo);
-        //        ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
-        //        if (numero_error != 0)
-        //        {
-        //            //insertar en la table de errores
-        //            //HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
-        //            return null;
-        //        }
-        //        else
-        //        {
-        //            return JsonConvert.SerializeObject(ds.Tables[0]);
-        //        }
-        //    }
-        //}
+        public bool eliminar_consecutivo(int id_conse, string descripcion)
+        {
+            conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                //insertar en la table de errores
+                // HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
+                return false;
+            }
+            else
+            {
+                sql = "dbo.eliminar_consecutivo";
+                ParamStruct[] parametros = new ParamStruct[3];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@consecutivo", SqlDbType.Int, id_conse);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@descripcion", SqlDbType.VarChar, descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@usuario", SqlDbType.VarChar, _usuario);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    //insertar en la table de errores
+                    // HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
 
+      
         public bool agregarConsecutivo(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
