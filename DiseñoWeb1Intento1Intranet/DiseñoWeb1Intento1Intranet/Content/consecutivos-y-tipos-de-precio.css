@@ -1,0 +1,100 @@
+﻿body {
+    background-image: url('../images/dish.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.content {
+    padding: 3em;
+    background-color: #181818;
+    color: #e5e5e5;
+    margin-top: 3rem;
+    height: 275px;
+    width: 450px;
+    justify-items: center;
+}
+
+.content-consecutivo {
+    padding: 3em;
+    background-color: #181818;
+    color: #e5e5e5;
+    margin-top: 3rem;
+    height: 235px;
+    width: 450px;
+    justify-items: center;
+}
+
+.content-tipo-precio {
+    padding: 3em;
+    background-color: #181818;
+    color: #e5e5e5;
+    margin-top: 3rem;
+    height: 335px;
+    width: 450px;
+    justify-items: center;
+}
+
+.content > h1 {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 5px;
+    font-size: 24px;
+}
+
+th,
+td {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    border: 1px solid #e5e5e5;
+    padding: 3px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFCE00;
+    text-decoration: underline;
+}
+
+h3 > a {
+    color: #FFCE00;
+    text-decoration: none;
+    letter-spacing: 3px;
+    border: solid 1px #FFCE00;
+    padding: 3px;
+    transition: 0.3s;
+}
+
+    h3 > a:hover {
+        font-size: 24px;
+        letter-spacing: 4px;
+        padding: 5px;
+    }
+
+select {
+    width: 100%;
+}
+
+input[type=text], input[type=password] {
+    width: 250px;
+    background-color: #181818;
+    border: none;
+    border-bottom: 1px #e5e5e5 solid;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    padding: 5px;
+    color: #e5e5e5;
+}
+/*
+Colores:
+Negro: #181818
+Amarillo: #FFCE00
+Blanco: #E5E5E5
+Gris: #C4C4C4
+*/
