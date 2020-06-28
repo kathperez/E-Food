@@ -683,10 +683,6 @@ C:\Users\karla\Desktop\Entregable2\EFoodBackend\EFoodIntranet\obj\Debug\EFoodInt
 C:\Users\karla\Desktop\Entregable2\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.csproj.CopyComplete
 C:\Users\karla\Desktop\Entregable2\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.dll
 C:\Users\karla\Desktop\Entregable2\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.pdb
-C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.csprojAssemblyReference.cache
-C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.csproj.CoreCompileInputs.cache
-C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.dll
-C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.pdb
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\EFoodIntranet.dll.config
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\EFoodIntranet.dll
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\EFoodIntranet.pdb
@@ -781,4 +777,8 @@ C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\es\System.
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\es\System.Web.WebPages.resources.dll
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.csprojAssemblyReference.cache
+C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.csproj.CoreCompileInputs.cache
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.csproj.CopyComplete
+C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.dll
+C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\EFoodIntranet\obj\Debug\EFoodIntranet.pdb
