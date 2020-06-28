@@ -77,3 +77,4 @@ C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\DAL\obj\Debug\DAL.csproj.Cor
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\DAL\obj\Debug\DAL.dll
 C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\DAL\obj\Debug\DAL.pdb
+C:\Users\karla\Documents\GitHub\E-Food\EFoodBackend\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
