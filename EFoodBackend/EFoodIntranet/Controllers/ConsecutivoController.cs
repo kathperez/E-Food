@@ -11,6 +11,7 @@ namespace EFoodIntranet.Controllers
     public class ConsecutivoController : ApiController
     {
         // GET: api/Consecutivo
+
         public string Get()
         {
             return new Consecutivo().cargarConsecutivos();

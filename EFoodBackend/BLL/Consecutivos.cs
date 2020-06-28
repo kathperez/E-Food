@@ -62,6 +62,7 @@ namespace BLL
             get { return _descripcion_vie; }
             set { _descripcion_vie = value; }
         }
+       // string key = "b14ca5898a4e4133bbce2ea2315a1916";
         #endregion
 
         #region variables privadas
@@ -73,6 +74,12 @@ namespace BLL
         #endregion
 
         #region metodos
+        //Estos métodos conectan la parte de la base de datos con lo que viene del API.
+
+        /// <summary>
+        /// Metodo para desplegar los conecutivos
+        /// </summary>
+        /// <returns></returns>
         public string cargarConsecutivos()
         {
             conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
@@ -90,13 +97,18 @@ namespace BLL
                 }
                 else
                 {
-                    return JsonConvert.SerializeObject(ds.Tables[0]);
+                    return (JsonConvert.SerializeObject(ds.Tables[0]));
                 }
             }
 
         }
-
-        public bool eliminar_consecutivo(int id_conse, string descripcion)
+        /// <summary>
+        /// Metodo para eliminar un consecutivo= es solo de prueba, no existe este método para el proyecto
+        /// </summary>
+        /// <param name="id_conse"></param>
+        /// <param name="descripcion"></param>
+        /// <returns></returns>
+              public bool eliminar_consecutivo(int id_conse, string descripcion)
         {
             conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -129,7 +141,11 @@ namespace BLL
             }
         }
 
-      
+      /// <summary>
+      /// Metodo para agregar un consecutivo
+      /// </summary>
+      /// <param name="accion"></param>
+      /// <returns></returns>
         public bool agregarConsecutivo(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);
@@ -144,7 +160,7 @@ namespace BLL
                     sql = "dbo.crear_consecutivo";
                 }
                 ParamStruct[] parametros = new ParamStruct[5];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@consecutivo", SqlDbType.Int, _consecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@consecutivo", SqlDbType.Int, consecutivo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@descripcion", SqlDbType.VarChar, _descripcion);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@posee_prefijo", SqlDbType.VarChar, _posee_pre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@prefijo", SqlDbType.VarChar, _prefijo);
@@ -164,6 +180,12 @@ namespace BLL
                 }
             }
         }
+      
+        /// <summary>
+        /// Metodo para actualizar un consecutivo
+        /// </summary>
+        /// <param name="accion"></param>
+        /// <returns></returns>
         public bool actualizarConsecutivo(string accion)
         {
             conexion = cls_DAL.trae_conexion("Progra5", ref mensaje_error, ref numero_error);

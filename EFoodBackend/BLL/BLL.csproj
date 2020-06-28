@@ -64,7 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs" />
+    <Compile Include="ConsultaProducto.cs" />
+    <Compile Include="Error_Intra.cs" />
     <Compile Include="Consecutivos.cs" />
+    <Compile Include="Encriptacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
