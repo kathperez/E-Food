@@ -11,6 +11,7 @@ namespace EFoodIntranet.Controllers
 {
     public class UsuarioRolController : ApiController
     {
+        //Controlador de usuario rol
         // GET: api/UsuarioRol
         public string Get(string id)
         {
