@@ -100,6 +100,7 @@
                     console.log(response);
                 })
                 .catch(error => console.error('Unable to add item.', error));
+            $('#formulario').trigger("reset");
         }
     }
     var init = () => {

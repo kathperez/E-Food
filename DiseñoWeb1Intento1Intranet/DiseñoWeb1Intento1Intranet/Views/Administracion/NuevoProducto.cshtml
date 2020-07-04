@@ -1,20 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "LineaComida";
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Administración</title>
     <link rel="stylesheet" href="~/Content/nav-style.css">
-    <link rel="stylesheet" href="~/Content/medios_de_pago.css" />
+    <link rel="stylesheet" href="~/Content/editar_nuevo_consecutivo.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-  
+    <script src="~/JS/Administracion/ProductoNuevo.js"></script>
 </head>
 <body>
     <nav>
@@ -71,26 +69,43 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Líneas de Comida</p>
+        <p>Usted esta en: Nuevo producto</p>
     </div>
     <div class="container">
-        <div class="content-linea-de-comida">
-            <h1>Lista de Líneas de Comida</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Código</th>
-                    <th colspan="3">Nombre</th>
-                </tr>
-                <tbody id="contenido">
-                </tbody>
-            </table>
-            <br>
-            <br>
-            <h3><a href='@Url.Action("NuevoLineaComida", "Administracion") '>NUEVO!</a></h3>
-        </div>
+        <form id="formulario">
+            <div class="content-editar-producto">
+                <h1>Información del producto</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th>Código:</th>
+                        <td><input type="text" placeholder="Autogenerado" name="codigo" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Descripción:</th>
+                        <td><input type="text" placeholder="Descripción" name="descripcion" id="descripcion" required></td>
+                    </tr>
+                    <tr>
+                        <th>Línea:</th>
+                        <td>
+                            <select name="combos" id="combos">
+                               
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Contenido:</th>
+                        <td><textarea name="" id="contenido" cols="35" rows="7"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Foto:</th>
+                        <td><input type="file" placeholder="Examinar" name="examinar" id="foto" required></td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" id="crear">Crear producto</button>
+            </div>
+        </form>
     </div>
-    <script src="~/JS/Administracion/LineaComidaVer.js"></script>s
 </body>
 </html>
-

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="~/Content/medios_de_pago.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
 </head>
 <body>
     <nav>
@@ -44,8 +46,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                   
                     </ul>
                 </li>
                 <li>
@@ -80,45 +81,17 @@
                     <th>Código</th>
                     <th>Procesador</th>
                     <th>Tipo</th>
-                    <th colspan="3">Activo</th>
+                    <th>Estado</th>
+                    <th colspan="3"></th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Process.Net</td>
-                    <td>Tarjeta de Crédito o Débito</td>
-                    <td>Sí</td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Efectivo</td>
-                    <td>Efectivo</td>
-                    <td>Sí</td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>ECheck</td>
-                    <td>Cheque Electrónico</td>
-                    <td>Sí</td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>Pr-4</td>
-                    <td>ATH</td>
-                    <td>Tarjeta de Crédito o Débito</td>
-                    <td>No</td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-nuevo-medio-de-pago.html">Eliminar</a></td>
-                </tr>
+                <tbody id="contenido">
+                </tbody>
             </table>
             <br>
             <br>
-            <h3><a href="./editar-eliminar-nuevo-medio-de-pago.html">NUEVO!</a></h3>
+            <h3><a href='@Url.Action("NuevoMedioPago", "Administracion") '>NUEVO!</a></h3>
         </div>
     </div>
+    <script src="~/JS/Administracion/MedioPagoVer.js"></script>
 </body>
 </html>

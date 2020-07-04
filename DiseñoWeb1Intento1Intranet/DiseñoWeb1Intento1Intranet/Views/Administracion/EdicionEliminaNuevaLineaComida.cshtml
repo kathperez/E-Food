@@ -1,10 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "EdicionEliminaNuevaLineaComida";
+    ViewBag.Title = "EdicionEliminaNuevaTipoTarjeta";
     Layout = null;
 }
-
-<h2>EdicionEliminaNuevaLineaComida</h2>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +13,7 @@
     <link rel="stylesheet" href="~/Content/editarMedioPagoTipoTarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>    
 </head>
 <body>
     <nav>
@@ -47,8 +46,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -72,25 +70,29 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Crear/Editar/Eliminar linea de comida</p>
+        <p>Usted esta en: Editar Línea de Comida</p>
     </div>
     <div class="container">
-        <div class="content">
-            <h1>Información de la linea de comida</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Código:</th>
-                    <td><input type="text" placeholder="Código" name="codigo" required></td>
-                </tr>
-                <tr>
-                    <th>Descripción:</th>
-                    <td><input type="text" placeholder="Descripción" name="descripción" required></td>
-                </tr>
-            </table>
-            <br>
-            <button>Crear/Editar/Eliminar linea de comida</button>
-        </div>
+        <form id="formulario">
+            <div class="content">
+                <h1>Información de la línea de comida</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th>Código:</th>
+                        <td><input type="text"  placeholder="Codigo" name="codigo" id="codigo" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Descripción:</th>
+                        <td><input type="text" placeholder="Descripción" name="descripción" id="descripcion" required="required"></td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" id="guardar">Editar linea de comida</button>
+            </div>
+        </form>
     </div>
+    <script src="~/JS/Administracion/LineaComidaEditar.js"></script>
 </body>
 </html>
+

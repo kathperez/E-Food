@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/Content/editarMedioPagoTipoTarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <nav>
@@ -45,8 +46,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -73,31 +73,34 @@
         <p>Usted esta en: Crear/Editar/Eliminar tiquete de descuento</p>
     </div>
     <div class="container">
-        <div class="content-tiquete-de-descuento">
-            <h1>Información de Tiquete de descuento</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Código:</th>
-                    <td><input type="text" placeholder="Código" name="codigo" required></td>
-                </tr>
-                <tr>
-                    <th>Descripción:</th>
-                    <td><input type="text" placeholder="Descripción" name="descripcion" required></td>
-                </tr>
-                <tr>
-                    <th>Disponibles:</th>
-                    <td><input type="text" placeholder="Disponibles" name="disponibles" required></td>
-                </tr>
-                <tr>
-                    <th>Descuento:</th>
-                    <td><input type="text" placeholder="Descuento %" name="disponibles" required></td>
-                </tr>
-            </table>
-            <br>
-            <button>Crear/Editar/Eliminar tipo de tarjeta</button>
-        </div>
+        <form id="formulario">
+            <div class="content-tiquete-de-descuento">
+                <h1>Información de Tiquete de descuento</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th>Código:</th>
+                        <td><input type="text" placeholder="Código" name="codigo" id="codigo" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Descripción:</th>
+                        <td><input type="text" placeholder="Descripción" name="descripcion" id="descripcion" required></td>
+                    </tr>
+                    <tr>
+                        <th>Disponibles:</th>
+                        <td><input type="text" placeholder="Disponibles" name="disponibles"  id="disponibles" required></td>
+                    </tr>
+                    <tr>
+                        <th>Descuento:</th>
+                        <td><input type="text" placeholder="Descuento %" name="disponibles" id="descuento" required></td>
+                    </tr>
+                </table>
+                <br>
+                <button id="guardar">Editar tiquete descuento</button>
+            </div>
+        </form>
     </div>
+    <script src="~/JS/Administracion/TiqueteDescuentoEditar.js"></script>
 </body>
 </html>
 

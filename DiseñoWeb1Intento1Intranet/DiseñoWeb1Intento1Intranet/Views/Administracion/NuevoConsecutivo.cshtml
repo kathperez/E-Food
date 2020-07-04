@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "EdicionNuevoConsecutivo";
     Layout = null;
 }
@@ -48,8 +47,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                       
                     </ul>
                 </li>
                 <li>
@@ -73,7 +71,7 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Nuevo/Editar consecutivo</p>
+        <p>Usted esta en: Nuevo consecutivo</p>
     </div>
     <div class="container">
         <form id="formulario">
@@ -96,7 +94,7 @@
                     </tr>
                     <tr>
                         <th>Consecutivo:</th>
-                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" required></td>
+                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" ></td>
                     </tr>
                     <tr>
                         <th>Posee Prefijo:</th>

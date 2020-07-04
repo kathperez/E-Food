@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="~/Content/editarMedioPagoTipoTarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <nav>
@@ -47,8 +48,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -75,23 +75,26 @@
         <p>Usted esta en: Crear/Editar/Eliminar tipo de precio</p>
     </div>
     <div class="container">
-        <div class="content">
-            <h1>Información del tipo de precio</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Código:</th>
-                    <td><input type="text" placeholder="Código" name="codigo" required></td>
-                </tr>
-                <tr>
-                    <th>Descripción:</th>
-                    <td><input type="text" placeholder="Descripción" name="descripción" required></td>
-                </tr>
-            </table>
-            <br>
-            <button>Crear/Editar/Eliminar Tipo de precio</button>
-        </div>
+        <form id="formulario">
+            <div class="content">
+                <h1>Información del tipo de precio</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th>Código:</th>
+                        <td><input type="text" name="codigo" id="codigo" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Descripción:</th>
+                        <td><input type="text" placeholder="Descripción" name="descripción" id="descripcion" required="required"></td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" id="guardar">Editar tipo de precio</button>
+            </div>
+        </form>
     </div>
+    <script src="~/JS/Administracion/TipoPrecioEditar.js"></script>
 </body>
 </html>
 

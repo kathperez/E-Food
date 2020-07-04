@@ -47,8 +47,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -75,39 +74,41 @@
         <p>Usted esta en: Nuevo/Editar consecutivo</p>
     </div>
     <div class="container">
-        <div class="content">
-            <h1>Información del consecutivos</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Descripción:</th>
-                    <td>
-                        <select name="descripcion" id="descripcion">
-                            <option value="false">Elija una opción</option>
-                            <option value="Tipos de Precio">Tipos de Precio</option>
-                            <option value="Lista de Tarjetas de Credito o Debito">Lista de Tarjetas de Credito o Debito</option>
-                            <option value="Procesadores de Pago">Procesadores de Pago</option>
-                            <option value="Lineas de Comidas">Lineas de Comidas</option>
-                            <option value="Productos">Productos</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Consecutivo:</th>
-                    <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" required></td>
-                </tr>
-                <tr>
-                    <th>Posee Prefijo:</th>
-                    <td><input type="checkbox" id="posee">&nbsp;&nbsp;Sí</td>
-                </tr>
-                <tr>
-                    <th>Prefijo:</th>
-                    <td><input type="text" placeholder="Prefijo" name="prefijo" id="pref"></td>
-                </tr>
-            </table>
-            <br>
-            <button id="guardar">Crear/Editar consecutivo</button>
-        </div>
+        <form id="formulario">
+            <div class="content">
+                <h1>Información del consecutivos</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th>Descripción:</th>
+                        <td>
+                            <select name="descripcion" id="descripcion">
+                                <option value="false">Elija una opción</option>
+                                <option value="Tipos de Precio">Tipos de Precio</option>
+                                <option value="Lista de Tarjetas de Credito o Debito">Lista de Tarjetas de Credito o Debito</option>
+                                <option value="Procesadores de Pago">Procesadores de Pago</option>
+                                <option value="Lineas de Comidas">Lineas de Comidas</option>
+                                <option value="Productos">Productos</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Consecutivo:</th>
+                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" required></td>
+                    </tr>
+                    <tr>
+                        <th>Posee Prefijo:</th>
+                        <td><input type="checkbox" id="posee">&nbsp;&nbsp;Sí</td>
+                    </tr>
+                    <tr>
+                        <th>Prefijo:</th>
+                        <td><input type="text" placeholder="Prefijo" name="prefijo" id="pref"></td>
+                    </tr>
+                </table>
+                <br>
+                <button id="guardar">Crear/Editar consecutivo</button>
+            </div>
+        </form>
     </div>
     <script src="~/JS/Administracion/ConsecutivoEditar.js"></script>
 </body>
