@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="~/Content/editarMedioPagoTipoTarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <nav>
@@ -46,8 +47,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -74,76 +74,52 @@
         <p>Usted esta en: Crear/Editar/Eliminar medio de pago</p>
     </div>
     <div class="container">
-        <div class="content-medio-de-pago">
-            <h1>Información del Procesador de Pago</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Código:</th>
-                    <td><input type="text" placeholder="Código" name="codigo" required></td>
-                </tr>
-                <tr>
-                    <th>Procesador</th>
-                    <td><input type="text" placeholder="Procesador" name="procesador" required></td>
-                </tr>
-                <tr>
-                    <th>Nombre en opción de pago:</th>
-                    <td><input type="text" placeholder="Nombre de pago" name="opcion-de-pago" required></td>
-                </tr>
-                <tr>
-                    <th>Tipo:</th>
-                    <td>
-                        <select name="estado" id="estado">
-                            <option value="Activo">Efectivo</option>
-                            <option value="Desactivado">Cheque</option>
-                            <option value="Desactivado">Tarjeta de debito</option>
-                            <option value="tarjeta-de-credito">Tarjeta de credito</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Estado:</th>
-                    <td><input type="checkbox">&nbsp;&nbsp;Activo</td>
-                </tr>
-                <tr>
-                    <th>Requiere verificación</th>
-                    <td><input type="checkbox">&nbsp;&nbsp;Sí</td>
-                </tr>
-                <tr>
-                    <th>Método:</th>
-                    <td><input type="text" placeholder="Metodo" name="opcion-de-pago" required></td>
-                </tr>
-            </table>
-            <br>
-            <h1>Tarjetas</h1>
-            <br>
-            <div class="actualizarEstado">
-                <p>
-                    Disponibles:
-                    <select name="disponibles" id="tarjetas-disponibles">
-                        <option value="Visa Electron">Visa Electron</option>
-                        <option value="Diners Club">Diners Club</option>
-                        <option value="MasterCard">MasterCard</option>
-                        <option value="Visa">Visa</option>
-                        <option value="America Express">American Express</option>
-                    </select>
-                </p>
+        <form id="formulario">
+            <div class="content-medio-de-pago">
+                <h1>Información del Procesador de Pago</h1>
                 <br>
-                <button>Asignar</button>
+                <table>
+                    <tr>
+                        <th>Código:</th>
+                        <td><input type="text" placeholder="Autogenerado" name="codigo" id="codigo" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Procesador</th>
+                        <td><input type="text" placeholder="Procesador" name="procesador" id="procesador" required></td>
+                    </tr>
+                    <tr>
+                        <th>Nombre en opción de pago:</th>
+                        <td><input type="text" placeholder="Nombre de pago" name="opcion-de-pago" id="nombre" required></td>
+                    </tr>
+                    <tr>
+                        <th>Tipo:</th>
+                        <td>
+                            <select name="estado" id="tipo">
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="Cheque">Cheque</option>
+                                <option value="Tarjeta de Credito o Debito">Tarjeta de Credito o Debito</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Estado:</th>
+                        <td><input type="checkbox" id="estado">&nbsp;&nbsp;Activo</td>
+                    </tr>
+                    <tr>
+                        <th>Requiere verificación</th>
+                        <td><input type="checkbox" id="verificacion">&nbsp;&nbsp;Sí</td>
+                    </tr>
+                    <tr>
+                        <th>Método:</th>
+                        <td><input type="text" placeholder="Metodo" name="opcion-de-pago" id="metodo" required></td>
+                    </tr>
+                </table>
                 <br>
-                <br>
-                <p>
-                    Asignadas:
-                    <select name="disponibles" id="tarjetas-disponibles">
-                        <option value="MasterCard">MasterCard</option>
-                        <option value="Visa">Visa</option>
-                    </select>
-                </p>
+                <button id="guardar">Editar Medio Pago</button>
             </div>
-            <br>
-            <button>Crear/Editar/Eliminar Tipo de precio</button>
-        </div>
+        </form>
     </div>
+    <script src="~/JS/Administracion/MedioPagoEditar.js"></script>
 </body>
 </html>
 

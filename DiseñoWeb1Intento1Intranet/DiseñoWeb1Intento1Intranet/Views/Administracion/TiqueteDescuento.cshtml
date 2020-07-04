@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="~/Content/tipos_tarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    
 </head>
 <body>
     <nav>
@@ -45,7 +47,7 @@
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
                         <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                      
                     </ul>
                 </li>
                 <li>
@@ -78,35 +80,18 @@
             <table>
                 <tr>
                     <th>Código</th>
+                    <th>Nombre</th>
                     <th>Disponibles</th>
-                    <th colspan="3">Nombre</th>
+
                 </tr>
-                <tr>
-                    <td>D001</td>
-                    <td>Descuento Mes de Diciembre</td>
-                    <td>20</td>
-                    <td><a href="./editar-eliminar-crear-tiquete-de-descuento.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-crear-tiquete-de-descuento.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>DM1</td>
-                    <td>Descuento Dia de la Madre</td>
-                    <td>5</td>
-                    <td><a href="./editar-eliminar-crear-tiquete-de-descuento.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-crear-tiquete-de-descuento.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>DF011</td>
-                    <td>Descuento Fin de Semana</td>
-                    <td>15</td>
-                    <td><a href="./editar-eliminar-crear-tiquete-de-descuento.html">Editar</a></td>
-                    <td><a href="./editar-eliminar-crear-tiquete-de-descuento.html">Eliminar</a></td>
-                </tr>
+                <tbody id="contenido">
+                </tbody>
             </table>
             <br>
             <br>
-            <h3><a href="./editar-eliminar-crear-tiquete-de-descuento.html">NUEVO!</a></h3>
+            <h3><a href='@Url.Action("NuevoTiqueteDescuento", "Administracion") '>NUEVO!</a></h3>
         </div>
     </div>
+    <script src="~/JS/Administracion/TiqueteDescuentoVer.js"></script>
 </body>
 </html>

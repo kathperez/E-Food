@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "LineaComida";
     Layout = null;
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <title>Administración</title>
     <link rel="stylesheet" href="~/Content/nav-style.css">
-    <link rel="stylesheet" href="~/Content/medios_de_pago.css" />
+    <link rel="stylesheet" href="~/Content/editarMedioPagoTipoTarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-  
+    <script src="~/JS/Administracion/TiqueteDescuentoNuevo.js"></script>
 </head>
 <body>
     <nav>
@@ -47,7 +47,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                       
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -71,26 +71,36 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Líneas de Comida</p>
+        <p>Usted esta en: Crear tiquete de descuento</p>
     </div>
     <div class="container">
-        <div class="content-linea-de-comida">
-            <h1>Lista de Líneas de Comida</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Código</th>
-                    <th colspan="3">Nombre</th>
-                </tr>
-                <tbody id="contenido">
-                </tbody>
-            </table>
-            <br>
-            <br>
-            <h3><a href='@Url.Action("NuevoLineaComida", "Administracion") '>NUEVO!</a></h3>
-        </div>
+        <form id="formulario">
+            <div class="content-tiquete-de-descuento">
+                <h1>Información de Tiquete de descuento</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th>Código:</th>
+                        <td><input type="text" placeholder="Código" name="codigo" id="codigo" required></td>
+                    </tr>
+                    <tr>
+                        <th>Descripción:</th>
+                        <td><input type="text" placeholder="Descripción" name="descripcion" id="descripcion" required></td>
+                    </tr>
+                    <tr>
+                        <th>Disponibles:</th>
+                        <td><input type="number" placeholder="Disponibles" name="disponibles" id="disponible" required></td>
+                    </tr>
+                    <tr>
+                        <th>Descuento:</th>
+                        <td><input type="number" placeholder="Descuento %" name="disponibles" id="descuento" required></td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" id="crear">Crear tiquete descuento</button>
+            </div>
+         </form>
     </div>
-    <script src="~/JS/Administracion/LineaComidaVer.js"></script>s
 </body>
 </html>
 

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="~/Content/medios_de_pago.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+ 
 </head>
 <body>
     <nav>
@@ -44,8 +46,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                      
                     </ul>
                 </li>
                 <li>
@@ -75,51 +76,23 @@
         <div class="content-productos">
             <h1>Lista de Productos</h1>
             <br>
-            <table>
-                <tr>
-                    <th>Tipo Precio</th>
-                    <th colspan="4">Nombre</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Combo#1</td>
-                    <td><a href="./editar-nuevo-productos.html">Editar</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Agregar Precios</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Combo#2</td>
-                    <td><a href="./editar-nuevo-productos.html">Editar</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Agregar Precios</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Combo#3</td>
-                    <td><a href="./editar-nuevo-productos.html">Editar</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Agregar Precios</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Combo#4</td>
-                    <td><a href="./editar-nuevo-productos.html">Editar</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Agregar Precios</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Eliminar</a></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Combo#5</td>
-                    <td><a href="./editar-nuevo-productos.html">Editar</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Agregar Precios</a></td>
-                    <td><a href="./editar-nuevo-productos.html">Eliminar</a></td>
-                </tr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th></th>
+                        <th></th>                      
+                    </tr>
+                </thead>
+                <tbody id="contenido">
+                </tbody>
             </table>
             <br>
             <br>
-            <h3><a href="./editar-nuevo-productos.html">NUEVO!</a></h3>
+            <h3><a href='@Url.Action("NuevoProducto", "Administracion") '>NUEVO!</a></h3>
         </div>
     </div>
+    <script src="~/JS/Administracion/ProductosVer.js"></script>
 </body>
 </html>

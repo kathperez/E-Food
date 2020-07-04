@@ -163,6 +163,26 @@
     <Content Include="JS\Administracion\ConsecutivoEditar.js" />
     <Content Include="JS\Administracion\ConsecutivoNuevo.js" />
     <Content Include="JS\Administracion\ConsecutivoVer.js" />
+    <Content Include="JS\Administracion\LineaComidaEditar.js" />
+    <Content Include="JS\Administracion\LineaComidaNuevo.js" />
+    <Content Include="JS\Administracion\LineaComidaVer.js" />
+    <Content Include="JS\Administracion\MedioPagoEditar.js" />
+    <Content Include="JS\Administracion\MedioPagoNuevo.js" />
+    <Content Include="JS\Administracion\MedioPagoTarjetaAsignar.js" />
+    <Content Include="JS\Administracion\MedioPagoVer.js" />
+    <Content Include="JS\Administracion\PrecioProducto.js" />
+    <Content Include="JS\Administracion\ProductoEditar.js" />
+    <Content Include="JS\Administracion\ProductoNuevo.js" />
+    <Content Include="JS\Administracion\ProductosVer.js" />
+    <Content Include="JS\Administracion\TarjetaEditar.js" />
+    <Content Include="JS\Administracion\TarjetaNuevo.js" />
+    <Content Include="JS\Administracion\TarjetasVer.js" />
+    <Content Include="JS\Administracion\TipoPrecioEditar.js" />
+    <Content Include="JS\Administracion\TipoPrecioNuevo.js" />
+    <Content Include="JS\Administracion\TipoPrecioVer.js" />
+    <Content Include="JS\Administracion\TiqueteDescuentoEditar.js" />
+    <Content Include="JS\Administracion\TiqueteDescuentoNuevo.js" />
+    <Content Include="JS\Administracion\TiqueteDescuentoVer.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -208,6 +228,13 @@
     <Content Include="Views\Administracion\TiqueteDescuento.cshtml" />
     <Content Include="Views\Administracion\NuevoConsecutivo.cshtml" />
     <Content Include="Views\Seguridad\Index.cshtml" />
+    <Content Include="Views\Administracion\NuevoLineaComida.cshtml" />
+    <Content Include="Views\Administracion\NuevoProducto.cshtml" />
+    <Content Include="Views\Administracion\NuevoTipoPrecio.cshtml" />
+    <Content Include="Views\Administracion\NuevaTarjeta.cshtml" />
+    <Content Include="Views\Administracion\NuevoTiqueteDescuento.cshtml" />
+    <Content Include="Views\Administracion\NuevoMedioPago.cshtml" />
+    <Content Include="Views\Administracion\NuevoProcesadorTarjeta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

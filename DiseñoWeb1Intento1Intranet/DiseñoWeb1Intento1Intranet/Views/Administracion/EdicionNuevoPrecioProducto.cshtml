@@ -1,17 +1,21 @@
 ﻿
 @{
-    ViewBag.Title = "EdicionNuevoPrecioProducto";
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Administración</title>
     <link rel="stylesheet" href="~/Content/nav-style.css">
-    <link rel="stylesheet" href="~/Content/editar_nuevo_consecutivo.css" />
+    <link rel="stylesheet" href="~/Content/editarMedioPagoTipoTarjeta.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+  
+
+
 </head>
 <body>
     <nav>
@@ -44,8 +48,7 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                        <li><a href='@Url.Action("PrecioProducto", "Administracion") '>Precio productos</a></li>
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                     
                     </ul>
                 </li>
                 <li>
@@ -69,47 +72,47 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Nuevo/Editar producto</p>
+        <p>Usted esta en: Productos</p>
     </div>
     <div class="container">
-        <div class="content-editar-producto">
-            <h1>Información del producto</h1>
+        <div class="content-medio-de-pago">
+            <h1 id="titulo"></h1>
             <br>
             <table>
-                <tr>
-                    <th>Código:</th>
-                    <td><input type="text" placeholder="Código" name="codigo" required></td>
-                </tr>
-                <tr>
-                    <th>Descripción:</th>
-                    <td><input type="text" placeholder="Descripción" name="descripcion" required></td>
-                </tr>
-                <tr>
-                    <th>Línea:</th>
-                    <td>
-                        <select name="combos" id="combos">
-                            <option">
-                                Combos</option>
-                                <option value="Combo#1">Combo#1</option>
-                                <option value="Combo#2">Combo#2</option>
-                                <option value="Combo#3">Combo#3</option>
-                                <option value="Combo#4">Combo#4</option>
-                                <option value="Combo#5">Combo#5</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Contenido:</th>
-                    <td><textarea name="" id="" cols="35" rows="7"></textarea></td>
-                </tr>
-                <tr>
-                    <th>Foto:</th>
-                    <td><input type="file" placeholder="Examinar" name="examinar" required></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Tipo Precio</th>
+                        <th>Precio</th>
+                        <th colspan="2"></th>
+
+                    </tr>
+                </thead>
+                <tbody id="contenido">
+                </tbody>
+
             </table>
             <br>
-            <button>Crear/Editar producto</button>
+            <h1>Edición</h1>
+            <br>
+            <div class="actualizarEstado">
+                <p>
+                    Tipo Precio:
+                    <select name="tipoPrecio" id="tipoPrecio">
+                    </select>
+                </p>
+                <br>
+                <br>
+                <p>
+                    Precio:
+                    <input type="number" name="precio" id="precio">
+                </p>
+            </div>
+            <br>
+            <button id="actualizar">Actualizar</button>
+            <button id="crear">Nuevo</button>
+        
         </div>
     </div>
+    <script src="~/JS/Administracion/PrecioProducto.js"></script>
 </body>
 </html>
