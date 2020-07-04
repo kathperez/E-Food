@@ -11,6 +11,7 @@ namespace EFoodIntranet.Controllers
 {
     public class UsuarioRolController : ApiController
     {
+        //Controlador de usuario rol
         // GET: api/UsuarioRol
         public string Get(string id)
         {
@@ -29,7 +30,7 @@ namespace EFoodIntranet.Controllers
             else
             {
                 var message = string.Format("No se guardó el rol en el usuario.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
 
         }
@@ -44,7 +45,7 @@ namespace EFoodIntranet.Controllers
             else
             {
                 var message = string.Format("No se eliminó el rol del usuario.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
 
 
