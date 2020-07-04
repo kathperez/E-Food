@@ -13,7 +13,6 @@ namespace EFoodIntranet.Controllers
         // GET: api/ConsultaProductoLC
         public string Get(string lineaComida)
         {
-
             return new ConsultaProducto().carga_lista_ProductoLC(lineaComida);
         }
        

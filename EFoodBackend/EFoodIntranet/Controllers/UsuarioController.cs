@@ -38,12 +38,11 @@ namespace EFoodIntranet.Controllers
             else
             {
                 var message = string.Format("Error al crear el usuario, verifique los datos.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
         }
 
-        //// PUT api/values/5
-        ////[Authorize]
+        //// PUT api/values/5      
         public HttpResponseMessage Put(string id, [FromBody] Usuario usuarios)
         {
             if (usuarios.modificar_usuario_contrasena("Actualizar")) 
@@ -54,7 +53,7 @@ namespace EFoodIntranet.Controllers
             else
                 {
                     var message = string.Format("Error al modificar el usuario, verifique los datos.");
-                    return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                    return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
                 }
             }
     }

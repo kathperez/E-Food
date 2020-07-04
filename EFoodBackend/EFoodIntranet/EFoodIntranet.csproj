@@ -168,6 +168,14 @@
     <Compile Include="Controllers\ConsultaProductoLCController.cs" />
     <Compile Include="Controllers\Consulta_Error_IntranetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LineaComidaController.cs" />
+    <Compile Include="Controllers\PrecioProductoController.cs" />
+    <Compile Include="Controllers\ProcesadorController.cs" />
+    <Compile Include="Controllers\ProcesadorTarjetaController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\TarjetaController.cs" />
+    <Compile Include="Controllers\TipoPrecioController.cs" />
+    <Compile Include="Controllers\TiqueteDescuentoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\UsuarioRolController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

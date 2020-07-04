@@ -29,7 +29,7 @@ namespace EFoodIntranet.Controllers
             else
             {
                 var message = string.Format("No se guardó el rol en el usuario.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
 
         }
@@ -44,7 +44,7 @@ namespace EFoodIntranet.Controllers
             else
             {
                 var message = string.Format("No se eliminó el rol del usuario.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
 
 
