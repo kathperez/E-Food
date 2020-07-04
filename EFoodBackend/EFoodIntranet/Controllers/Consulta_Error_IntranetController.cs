@@ -10,6 +10,7 @@ namespace EFoodIntranet.Controllers
 {
     public class Consulta_Error_IntranetController : ApiController
     {
+        //consultas de intranet
         public string Get(string fecha1, string fecha2)
         {
 
