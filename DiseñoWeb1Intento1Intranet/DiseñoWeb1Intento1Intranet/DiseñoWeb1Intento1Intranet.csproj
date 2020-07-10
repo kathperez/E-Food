@@ -131,8 +131,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdministracionController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SeguridadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +145,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\consecutivos-y-tipos-de-precio.css" />
     <Content Include="Content\consecutivos_tipos_precio.css" />
+    <Content Include="Content\consultas.css" />
     <Content Include="Content\editarMedioPagoTipoTarjeta.css" />
     <Content Include="Content\editar_nuevo_consecutivo.css" />
     <Content Include="Content\index.css" />
@@ -170,6 +171,7 @@
     <Content Include="JS\Administracion\MedioPagoNuevo.js" />
     <Content Include="JS\Administracion\MedioPagoTarjetaAsignar.js" />
     <Content Include="JS\Administracion\MedioPagoVer.js" />
+    <Content Include="JS\Administracion\MedioPagoVer2.js" />
     <Content Include="JS\Administracion\PrecioProducto.js" />
     <Content Include="JS\Administracion\ProductoEditar.js" />
     <Content Include="JS\Administracion\ProductoNuevo.js" />
@@ -183,6 +185,10 @@
     <Content Include="JS\Administracion\TiqueteDescuentoEditar.js" />
     <Content Include="JS\Administracion\TiqueteDescuentoNuevo.js" />
     <Content Include="JS\Administracion\TiqueteDescuentoVer.js" />
+    <Content Include="JS\Consultas\ConsultaBitacora.js" />
+    <Content Include="JS\Consultas\ConsultaBitacora2.js" />
+    <Content Include="JS\Consultas\ConsultaErrorIntra.js" />
+    <Content Include="JS\Consultas\ConsultaProducto.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -227,7 +233,6 @@
     <Content Include="Views\Administracion\TipoPrecio.cshtml" />
     <Content Include="Views\Administracion\TiqueteDescuento.cshtml" />
     <Content Include="Views\Administracion\NuevoConsecutivo.cshtml" />
-    <Content Include="Views\Seguridad\Index.cshtml" />
     <Content Include="Views\Administracion\NuevoLineaComida.cshtml" />
     <Content Include="Views\Administracion\NuevoProducto.cshtml" />
     <Content Include="Views\Administracion\NuevoTipoPrecio.cshtml" />
@@ -235,10 +240,13 @@
     <Content Include="Views\Administracion\NuevoTiqueteDescuento.cshtml" />
     <Content Include="Views\Administracion\NuevoMedioPago.cshtml" />
     <Content Include="Views\Administracion\NuevoProcesadorTarjeta.cshtml" />
+    <Content Include="Views\Consultas\Bitacora.cshtml" />
+    <Content Include="Views\Consultas\Pedidos.cshtml" />
+    <Content Include="Views\Consultas\ErroresIntra.cshtml" />
+    <Content Include="Views\Consultas\Productos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="JS\Consultas\" />
     <Folder Include="JS\Seguridad\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -14,22 +14,7 @@
     console.log("Lo que viene de arreglo");  
     console.log(arreglo[index]);
     localStorage.removeItem('consecutivos'); // Clear the localStorage
-    var idconsecViejo = arreglo[index].cod_consec;
-    var tipoConsecutivoViejo = arreglo[index].cod_consec;
-    var prefijo;
-    var estadoPref = () => {
-        if ($('#posee').prop('checked')) {
-            prefijo = "V";
-            $("#pref").prop('disabled', false);
-        } else {
-            prefijo = "F";
-            $("#pref").prop('disabled', true);
-        }
-    }
-    $('#posee').change(function () {
-        estadoPref();
-    });
-
+   
     var modificar = () => {
         console.log("Dentro de modificar antes de ver valores de array");
         console.log(arreglo[index]);
@@ -45,7 +30,9 @@
 
     }
     const uri = "https://localhost:44308/Api/Consecutivo/1";
+
     var edit = (poseepre) => {
+        event.preventDefault();
         var verificar = true;
         let addNameDesc = document.getElementById('descripcion');
         let addNameCons = document.getElementById('consecutivo');
@@ -55,8 +42,7 @@
         var estadoPref = () => {
             if (document.getElementById('posee').checked) {
                 posee_prefijo = "V";
-                console.log("Prefijo: " + posee_prefijo);
-
+                console.log("Prefijo: " + posee_prefijo);              
 
             } else {
                 posee_prefijo = "F";
@@ -71,6 +57,7 @@
 
         if (!addNameCons.value) {
             console.log('Espacio de consecutivo requerido');
+            addNameCons.focus();
             verificar = false;
         }
         else if (addNameDesc.value === 'false') {
@@ -94,12 +81,9 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(item)
-            })
-                .then(response => response.json())
-                .then((response) => {
-                    console.log(response);
-                })
-                .catch(error => console.error('Unable to add item.', error));
+            }).then(response => response.text())
+                .then(text => alert(text))            
+                .catch(err => console.log('error', err));
             $('#formulario').trigger("reset");
         }
     }

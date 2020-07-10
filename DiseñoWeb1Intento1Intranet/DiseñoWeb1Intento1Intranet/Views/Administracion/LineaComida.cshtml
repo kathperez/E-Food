@@ -53,10 +53,10 @@
                 <li>
                     <a href="#">Consultas</a>
                     <ul class="dropdownConsulta">
-                        <li><a href="../Consultas/pedidos.html">Pedidos</a></li>
-                        <li><a href="../Consultas/productos.html">Productos</a></li>
-                        <li><a href="../Consultas/bitacora.html">Bitácora</a></li>
-                        <li><a href="../Consultas/errores.html">Errores</a></li>
+                        <li><a href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
+                        <li><a href='@Url.Action("Productos", "Consultas") '>Productos</a></li>
+                        <li><a href='@Url.Action("Bitacora", "Consultas") '>Bitácora</a></li>
+                        <li><a href='@Url.Action("ErroresIntra", "Consultas") '>Errores Intranet</a></li>
                     </ul>
                 </li>
                 <li class="door">
@@ -80,7 +80,8 @@
             <table>
                 <tr>
                     <th>Código</th>
-                    <th colspan="3">Nombre</th>
+                    <th colspan="1">Nombre</th>
+                    <th colspan="2"></th>
                 </tr>
                 <tbody id="contenido">
                 </tbody>

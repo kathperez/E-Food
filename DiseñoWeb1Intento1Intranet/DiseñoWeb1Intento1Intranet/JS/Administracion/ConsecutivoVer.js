@@ -53,7 +53,7 @@ function generarTabla(datos) {
                         <td>${valor.consecutivo}</td>
                         <td>${valor.desc}</td>
                         <td><a  id="${cont}" style="color: dimgrey;" href='/Administracion/EdicionNuevoConsecutivo '>Editar</a></td>
-                        <td><button  id="${cont}" style="color: dimgrey;" href='/Administracion/EdicionNuevoConsecutivo '>Eliminar</button></td>
+                       
                       </tr>
         `
         cont = cont + 1;

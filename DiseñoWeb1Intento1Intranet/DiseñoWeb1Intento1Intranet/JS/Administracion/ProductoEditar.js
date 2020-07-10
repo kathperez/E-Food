@@ -23,6 +23,8 @@
                 const json_data = JSON.parse(data);
                 arregloLC = json_data;
                 mostrarLC(arregloLC);
+            }).then(() => {
+                modificar();
             })
             .catch(err => console.log('error', err))
     }
@@ -103,7 +105,7 @@
     var init = () => {
        console.log("Imprimiendo el array desde el inicio");
        obtenerLineas();  
-       modificar();
+      //modificar();
         var btnPut = document.getElementById('guardar');
        btnPut.onclick = editar;
     }

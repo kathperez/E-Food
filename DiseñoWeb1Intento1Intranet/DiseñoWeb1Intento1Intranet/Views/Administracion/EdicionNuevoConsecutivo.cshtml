@@ -53,10 +53,10 @@
                 <li>
                     <a href="#">Consultas</a>
                     <ul class="dropdownConsulta">
-                        <li><a href="../Consultas/pedidos.html">Pedidos</a></li>
-                        <li><a href="../Consultas/productos.html">Productos</a></li>
-                        <li><a href="../Consultas/bitacora.html">Bitácora</a></li>
-                        <li><a href="../Consultas/errores.html">Errores</a></li>
+                        <li><a href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
+                        <li><a href='@Url.Action("Productos", "Consultas") '>Productos</a></li>
+                        <li><a href='@Url.Action("Bitacora", "Consultas") '>Bitácora</a></li>
+                        <li><a href='@Url.Action("ErroresIntra", "Consultas") '>Errores Intranet</a></li>
                     </ul>
                 </li>
                 <li class="door">
@@ -71,7 +71,7 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Nuevo/Editar consecutivo</p>
+        <p>Usted esta en: Editar consecutivo</p>
     </div>
     <div class="container">
         <form id="formulario">
@@ -94,7 +94,7 @@
                     </tr>
                     <tr>
                         <th>Consecutivo:</th>
-                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" required></td>
+                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" readonly></td>
                     </tr>
                     <tr>
                         <th>Posee Prefijo:</th>
@@ -106,7 +106,7 @@
                     </tr>
                 </table>
                 <br>
-                <button id="guardar">Crear/Editar consecutivo</button>
+                <button id="guardar">Editar consecutivo</button>
             </div>
         </form>
     </div>
