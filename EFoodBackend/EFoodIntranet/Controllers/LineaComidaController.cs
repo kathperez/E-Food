@@ -43,7 +43,7 @@ namespace EFoodIntranet.Controllers
             }
             else
             {
-                var message = string.Format("No se eliminó línea de comida, verifique los datos.");
+                var message = string.Format("No se eliminó línea de comida, verifique los datos verifique los datos y revise asociaciones con productos.");
                 return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
           

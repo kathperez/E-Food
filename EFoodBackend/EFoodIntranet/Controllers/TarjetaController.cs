@@ -66,7 +66,7 @@ namespace EFoodIntranet.Controllers
             }
             else
             {
-                var message = string.Format("No se eliminó la tarjeta, verifique los datos.");
+                var message = string.Format("No se eliminó la tarjeta, verifique los datos y su asociación con procesadores.");
                 return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);            }
            
         }
