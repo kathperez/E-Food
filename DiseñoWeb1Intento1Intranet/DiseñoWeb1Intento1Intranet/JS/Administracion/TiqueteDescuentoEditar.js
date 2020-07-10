@@ -29,21 +29,34 @@
         var verificar = true;
         let codigo = document.getElementById('codigo');
         let descripcion = document.getElementById('descripcion');
-        let dispo = document.getElementById('disponibles');
-        let descuen = document.getElementById('descuento');
+        let disponibleV = document.getElementById('disponibles');
+        let descuentoV = document.getElementById('descuento');
        
         let user = 'karla';
         if (!descripcion.value) {
             console.log('campo descripcion requerido');
             descripcion.focus();
             verificar = false;
+        } else if (!disponibleV.value) {
+            console.log('Espacio de disponible requerido');
+            disponibleV.focus();
+            verificar = false;
+        }
+        else if (!descuentoV.value) {
+            console.log('Espacio de descuento requerido');
+            descuentoV.focus();
+            verificar = false;
+        } else if (descuentoV.value < 0 || descuentoV.value > 99) {
+            console.log('Espacio de descuento incorrecto');
+            descuentoV.focus();
+            verificar = false;
         }
         if (verificar) {
             const item = {
                 codigo: codigo.value,
                 descripcion: descripcion.value,
-                disponible: dispo.value,
-                descuento: descuen.value,
+                disponible: disponibleV.value,
+                descuento: descuentoV.value,
                 usuario: user
             };
 

@@ -1,6 +1,7 @@
 ﻿window.onload = function () {
     console.log("Entró al onload");
     const URLGet = "https://localhost:44308/api/Procesador";
+    $('#myTable').DataTable();
     list(URLGet).catch((e) => console.error(e));
 };
 let ArrProcesador = [];
@@ -70,13 +71,12 @@ function generarTabla(datos) {
                         <td>${valor.estado}</td>
                          <td><a  id="${cont}" style="color: dimgrey;" href='/Administracion/EdicionEliminaNuevoMedioPago '>Editar</a></td>
                         <td><button  id="${valor.codigo}" style="color: dimgrey;" >Eliminar</button></td>
-                        <td><a  id="${cont}" style="color: dimgrey;" href='#'></a></td>
                       </tr>
         `
             cont = cont + 1;
             ArrProcesador.push(valor);
         }
-    }
+    }   
     console.log("Imprimiendo el array");
     console.log(ArrProcesador)
     console.log("Imprimiendo índice de array");
@@ -89,7 +89,7 @@ $("#contenido").on('click', 'a', function () {
     var id = $(this).attr('id');
     localStorage.setItem('idProcesador', id);//Indice seleccionado que se va a editar
     localStorage.setItem('procesador', JSON.stringify(ArrProcesador));//ese guarda el arreglo de procesadores para poder usarlo en otro JS.
-
+  
 });
 
 $("#contenido").on('click', 'button', function () {

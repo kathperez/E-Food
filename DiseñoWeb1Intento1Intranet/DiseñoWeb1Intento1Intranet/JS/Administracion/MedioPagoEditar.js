@@ -18,7 +18,8 @@
         console.log(arreglo[index]);
         $('#codigo').val(arreglo[index].codigo);
         $('#procesador').val(arreglo[index].procesador);
-        $('#nombre').val(arreglo[index].nombre);      
+        $('#nombre').val(arreglo[index].nombre);    
+        $('#tipo').val(arreglo[index].tipo);   
         if (arreglo[index].estado == "activo") {
             $('#estado').prop("checked", true)
             console.log("activo");

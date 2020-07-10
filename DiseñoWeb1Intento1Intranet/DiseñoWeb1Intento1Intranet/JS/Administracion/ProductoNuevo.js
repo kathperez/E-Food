@@ -1,34 +1,33 @@
-﻿
-window.onload = function () {
-    
-    obtenerLineas();  
+﻿window.onload = function () {
+
+    obtenerLineas();
     console.log('after obtener lineas');
     const reposBtn = document.getElementById("crear");
-    reposBtn.onclick = addItem;  
+    reposBtn.onclick = addItem;
 };
 
- 
+
 var arregloLC = [];
 const uri = "https://localhost:44308/api/Producto";
 const uriLC = "https://localhost:44308/api/LineaComida";
 
 
-function obtenerLineas()  { 
+function obtenerLineas() {
     fetch(uriLC)
         .then(res => res.json())
         .then(data => {
-            const json_data = JSON.parse(data);            
-            arregloLC = json_data;          
-            mostrarLC(arregloLC);            
+            const json_data = JSON.parse(data);
+            arregloLC = json_data;
+            mostrarLC(arregloLC);
         })
         .catch(err => console.log('error', err))
 }
 
 function mostrarLC(array) {
-    var lineas = document.getElementById('combos');       
+    var lineas = document.getElementById('combos');
     for (let value of array) {
         var option = document.createElement("option");
-        option.innerText = value.descripcion;      
+        option.innerText = value.descripcion;
         lineas.appendChild(option);
     }
 }
@@ -78,13 +77,9 @@ function addItem() {
             },
             body: JSON.stringify(item)
         }).then(response => response.text())
-            .then(text => alert(text))
-            .then(res => console.log(res))
-            .then(data => console.log(data))
+            .then(text => alert(text))            
             .catch(err => console.log('error', err));
-       $('#formulario').trigger("reset");
+        $('#formulario').trigger("reset");
 
     };
 }
-
-

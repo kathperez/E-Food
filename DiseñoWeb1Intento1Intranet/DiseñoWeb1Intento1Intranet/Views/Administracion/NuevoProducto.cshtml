@@ -51,10 +51,10 @@
                 <li>
                     <a href="#">Consultas</a>
                     <ul class="dropdownConsulta">
-                        <li><a href="../Consultas/pedidos.html">Pedidos</a></li>
-                        <li><a href="../Consultas/productos.html">Productos</a></li>
-                        <li><a href="../Consultas/bitacora.html">Bitácora</a></li>
-                        <li><a href="../Consultas/errores.html">Errores</a></li>
+                        <li><a href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
+                        <li><a href='@Url.Action("Productos", "Consultas") '>Productos</a></li>
+                        <li><a href='@Url.Action("Bitacora", "Consultas") '>Bitácora</a></li>
+                        <li><a href='@Url.Action("ErroresIntra", "Consultas") '>Errores Intranet</a></li>
                     </ul>
                 </li>
                 <li class="door">
@@ -72,7 +72,7 @@
         <p>Usted esta en: Nuevo producto</p>
     </div>
     <div class="container">
-        <form id="formulario">
+        <form id="formulario"  >
             <div class="content-editar-producto">
                 <h1>Información del producto</h1>
                 <br>
@@ -99,7 +99,7 @@
                     </tr>
                     <tr>
                         <th>Foto:</th>
-                        <td><input type="file" placeholder="Examinar" name="examinar" id="foto" required></td>
+                        <td><input type="text" placeholder="Examinar" name="examinar" id="foto" required></td>
                     </tr>
                 </table>
                 <br>

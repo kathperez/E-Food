@@ -1,0 +1,119 @@
+﻿body {
+    background-image: url("../images/consultas2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    /*para que se vea toda la imagen, se llene tanto altura como ancho*/
+    background-size: cover;
+}
+
+.container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.content {
+    padding: 3em;
+    background-color: #181818;
+    color: #e5e5e5;
+    margin-top: 3rem;
+    height: 475px;
+    width: 650px;
+    justify-items: center;
+}
+
+    .content > h2 {
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 5px;
+        font-size: 16px;
+    }
+
+.lstUsuarios {
+    height: 250px;
+}
+
+.tblUsuarios {
+    float: left;
+}
+
+.consulta {
+    display: grid;
+    justify-items: center;
+}
+
+.titleRoles {
+    clear: both;
+    margin-top: 1rem;
+}
+
+#estado {
+    width: 150px;
+    margin: 20px;
+}
+
+th,
+td {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    border: 1px solid #e5e5e5;
+    padding: 3px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    background-color: #181818;
+    border: none;
+    border-bottom: 1px #e5e5e5 solid;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+    padding: 5px;
+    color: #e5e5e5;
+}
+
+button {
+    background-color: #ffce00;
+    padding: 1rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: "Raleway", sans-serif;
+    transition: 0.3s;
+}
+
+    button:hover {
+        padding: 1.3rem 2.5rem;
+        cursor: pointer;
+        letter-spacing: 3px;
+    }
+
+.eliminar {
+    text-decoration: none;
+    text-align: center;
+    padding-left: 2rem;
+    color: #ffce00;
+}
+table.tableBodyScroll tbody {
+    display: block;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+    table.tableBodyScroll thead, table.tableBodyScroll tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+
+/*
+Colores:
+Negro: #181818
+Amarillo: #FFCE00
+Blanco: #E5E5E5
+Gris: #C4C4C4
+*/
