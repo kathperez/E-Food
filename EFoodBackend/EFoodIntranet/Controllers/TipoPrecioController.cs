@@ -55,7 +55,7 @@ namespace EFoodIntranet.Controllers
             }
             else
             {
-                var message = string.Format("No se eliminó el tipo precio, verifique los datos.");
+                var message = string.Format("No se eliminó el tipo precio, verifique los datos y revise asociaciones con productos.");
                 return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
           

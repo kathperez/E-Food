@@ -38,7 +38,7 @@ namespace EFoodIntranet.Controllers
             }
             else {
                 var message = string.Format("Error al crear el consecutivo, verifique los datos.");
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, message);
+                return Request.CreateResponse(HttpStatusCode.NotAcceptable, message);
             }
              
         }
