@@ -45,7 +45,11 @@
         $('#descripcion').val(arreglo[index].descripcion);  
         $('#combos').val(arreglo[index].lineaComida);
         $('#contenido').val(arreglo[index].contenido);
-       // $('#foto').val(arreglo[index].foto);
+        $('#foto').val(arreglo[index].foto);
+        document.getElementById("imagenComida").src = (arreglo[index].foto);
+        console.log("dentro de modificar");
+        console.log((arreglo[index].foto));
+       
     }
     const uri = "https://localhost:44308/api/Producto/1";
     var editar = () => {
@@ -55,9 +59,9 @@
         let codigo = document.getElementById('codigo');
         let descripcion = document.getElementById('descripcion');
         let lineaComidaElegida = document.getElementById('combos');
-        let contenido = document.getElementById('contenido');
-        let foto = 'foto';
+        let contenido = document.getElementById('contenido');       
         let user = 'karla';
+        let fotoV = document.getElementById('foto');
 
         if (!descripcion.value) {
             console.log('Espacio de descripción requerido');
@@ -77,6 +81,7 @@
         console.log(lineaComidaElegida.value);
         console.log(contenido.value);
         console.log(descripcion.value);
+        console.log(fotoV.value);
         if (verificar) {
             const item = {
                 cod_prod: codigo.value,
@@ -84,7 +89,7 @@
                 contenido: contenido.value,
                 linea_comida: lineaComidaElegida.value,
                 usuario: user,
-                foto: foto
+                foto: fotoV.value.toString()
             };
 
             fetch(uri, {
@@ -95,11 +100,10 @@
                 },
                 body: JSON.stringify(item)
             }).then(response => response.text())
-                .then(text => alert(text))
-                .then(res => console.log(res))
-                .then(data => console.log(data))
+                .then(text => alert(text))            
                 .catch(err => console.log('error', err));
             $('#formulario').trigger("reset");
+            $('#imagenComida').src="";
         }
     }
     var init = () => {

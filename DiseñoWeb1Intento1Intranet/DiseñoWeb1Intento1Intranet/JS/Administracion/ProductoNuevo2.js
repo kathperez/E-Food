@@ -38,7 +38,7 @@ function addItem() {
     let descripcion = document.getElementById('descripcion');
     let lineaComidaElegida = document.getElementById('combos');
     let contenido = document.getElementById('contenido');
-    let foto = 'foto';
+    let fotoV = document.getElementById('foto');
     let user = 'karla';
 
 
@@ -60,27 +60,26 @@ function addItem() {
     console.log(lineaComidaElegida.value);
     console.log(contenido.value);
     console.log(descripcion.value);
-    if (verificar) {
-
-        const formData = new FormData();
-        const fileField = document.querySelector('input[type="file"]');
-
-        formData.append('descripcion', descripcion.value);
-        formData.append('contenido', contenido.value);
-        formData.append('linea_comida', lineaComidaElegida.value);
-        formData.append('usuario', user);       
-        formData.append('foto', fileField.files[0]);
-        //const item = {
-        //    descripcion: descripcion.value,
-        //    contenido: contenido.value,
-        //    linea_comida: lineaComidaElegida.value,
-        //    usuario: user,
-        //    foto: foto
-        //};
+    if (verificar) {            
+ 
+        //lo convierto a string
+        //convertir imagen a varbinary
+        //manejar la url
+        const item = {
+            descripcion: descripcion.value,
+            contenido: contenido.value,
+            linea_comida: lineaComidaElegida.value,
+            usuario: user,
+            foto: fotoV.value.toString()
+        };
 
         fetch(uri, {
-            method: 'POST',           
-            body: formData
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
         }).then(response => response.text())
             .then(text => alert(text))
             .catch(err => console.log('error', err));
