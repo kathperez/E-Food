@@ -175,6 +175,7 @@
     <Content Include="JS\Administracion\PrecioProducto.js" />
     <Content Include="JS\Administracion\ProductoEditar.js" />
     <Content Include="JS\Administracion\ProductoNuevo.js" />
+    <Content Include="JS\Administracion\ProductoNuevo2.js" />
     <Content Include="JS\Administracion\ProductosVer.js" />
     <Content Include="JS\Administracion\TarjetaEditar.js" />
     <Content Include="JS\Administracion\TarjetaNuevo.js" />

@@ -14,7 +14,7 @@ namespace DiseñoWeb1Intento1Intranet.Controllers
         {
             return View();
         }
-
+       
         public ActionResult EdicionNuevoConsecutivo()
         {
             return View();
