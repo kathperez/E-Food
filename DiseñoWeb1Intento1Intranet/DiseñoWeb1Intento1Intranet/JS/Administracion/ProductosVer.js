@@ -1,10 +1,38 @@
 ﻿window.onload = function () {
     console.log("Entró al onload");
-    const URLGet = "https://localhost:44308/api/Producto";
-    list(URLGet).catch((e) => console.error(e));
+    var usuarioRoles = localStorage['rolesUsuario'];
+    validarUsuario(usuarioRoles);
 };
 let ArrProducto = [];
 
+function validarUsuario(datos) {
+
+    var usuarioValido = false;
+    for (let valor of JSON.parse(datos)) {
+        if (valor.codigo_rol == 1) {
+            document.getElementById('navegacion_seguridad').style.display = "block";
+            document.getElementById('navegacion_administracion').style.display = "block";
+            document.getElementById('navegacion_consulta').style.display = "block";
+            usuarioValido = true;
+        }
+        if (valor.codigo_rol == 2) {
+            document.getElementById('navegacion_seguridad').style.display = "block";
+        }
+        if (valor.codigo_rol == 3) {
+            document.getElementById('navegacion_administracion').style.display = "block";
+            usuarioValido = true;
+        }
+        if (valor.codigo_rol == 4) {
+            document.getElementById('navegacion_consulta').style.display = "block";
+        }
+
+    }
+    if (usuarioValido == true) {
+        const URLGet = "https://localhost:44308/api/Producto";
+        list(URLGet).catch((e) => console.error(e));
+    }
+
+}
 async function list(Get = "") {
     try {
         const objetoRecibido = await request(Get);

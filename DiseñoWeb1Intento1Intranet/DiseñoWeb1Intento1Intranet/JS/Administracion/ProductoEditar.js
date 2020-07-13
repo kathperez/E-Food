@@ -11,8 +11,7 @@
     console.log("Lo que viene de arreglo");
     console.log(arreglo[index]);
     localStorage.removeItem('producto'); // Clear the localStorage   
-
-    var arregloLC = [];    
+    var arregloLC = [];
     const uriLC = "https://localhost:44308/api/LineaComida";
 
 
@@ -42,14 +41,14 @@
         console.log("Dentro de modificar antes de ver valores de array");
         console.log(arreglo[index]);
         $('#codigo').val(arreglo[index].codigo);
-        $('#descripcion').val(arreglo[index].descripcion);  
+        $('#descripcion').val(arreglo[index].descripcion);
         $('#combos').val(arreglo[index].lineaComida);
         $('#contenido').val(arreglo[index].contenido);
         $('#foto').val(arreglo[index].foto);
         document.getElementById("imagenComida").src = (arreglo[index].foto);
         console.log("dentro de modificar");
         console.log((arreglo[index].foto));
-       
+
     }
     const uri = "https://localhost:44308/api/Producto/1";
     var editar = () => {
@@ -59,7 +58,7 @@
         let codigo = document.getElementById('codigo');
         let descripcion = document.getElementById('descripcion');
         let lineaComidaElegida = document.getElementById('combos');
-        let contenido = document.getElementById('contenido');       
+        let contenido = document.getElementById('contenido');
         let user = 'karla';
         let fotoV = document.getElementById('foto');
 
@@ -100,18 +99,47 @@
                 },
                 body: JSON.stringify(item)
             }).then(response => response.text())
-                .then(text => alert(text))            
+                .then(text => alert(text))
                 .catch(err => console.log('error', err));
             $('#formulario').trigger("reset");
-            $('#imagenComida').src="";
+            $('#imagenComida').src = "";
         }
     }
+
+    function validarUsuario(datos) {
+
+        var usuarioValido = false;
+        for (let valor of JSON.parse(datos)) {
+            if (valor.codigo_rol == 1) {
+                document.getElementById('navegacion_seguridad').style.display = "block";
+                document.getElementById('navegacion_administracion').style.display = "block";
+                document.getElementById('navegacion_consulta').style.display = "block";
+                usuarioValido = true;
+            }
+            if (valor.codigo_rol == 2) {
+                document.getElementById('navegacion_seguridad').style.display = "block";
+            }
+            if (valor.codigo_rol == 3) {
+                document.getElementById('navegacion_administracion').style.display = "block";
+                usuarioValido = true;
+            }
+            if (valor.codigo_rol == 4) {
+                document.getElementById('navegacion_consulta').style.display = "block";
+            }
+
+        }
+        if (usuarioValido == true) {
+            obtenerLineas();
+        }
+
+    }
     var init = () => {
-       console.log("Imprimiendo el array desde el inicio");
-       obtenerLineas();  
-      //modificar();
+        console.log("Imprimiendo el array desde el inicio");
+        // obtenerLineas();  
+        var usuarioRoles = localStorage['rolesUsuario'];
+        validarUsuario(usuarioRoles);
         var btnPut = document.getElementById('guardar');
-       btnPut.onclick = editar;
+        btnPut.onclick = editar;
     }
 
     init();

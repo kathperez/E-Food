@@ -1,15 +1,44 @@
 ﻿window.onload = function () {
 
-    obtenerLineas();
-    console.log('after obtener lineas');
+    var usuarioRoles = localStorage['rolesUsuario'];
+    validarUsuario(usuarioRoles);
     const reposBtn = document.getElementById("crear");
     reposBtn.onclick = addItem;
 };
 
-
 var arregloLC = [];
 const uri = "https://localhost:44308/api/Producto";
 const uriLC = "https://localhost:44308/api/LineaComida";
+
+function validarUsuario(datos) {
+    var cont = 0;//se utiliza para obtener indice por editar
+    var usuarioValido = false;
+    for (let valor of JSON.parse(datos)) {
+        if (valor.codigo_rol == 1) {
+            document.getElementById('navegacion_seguridad').style.display = "block";
+            document.getElementById('navegacion_administracion').style.display = "block";
+            document.getElementById('navegacion_consulta').style.display = "block";
+            document.getElementById('producto_validar_Usuario').style.display = "block";
+            usuarioValido = true;
+        }
+        if (valor.codigo_rol == 2) {
+            document.getElementById('navegacion_seguridad').style.display = "block";
+        }
+        if (valor.codigo_rol == 3) {
+            document.getElementById('navegacion_administracion').style.display = "block";
+            document.getElementById('producto_validar_Usuario').style.display = "block";
+            usuarioValido = true;
+        }
+        if (valor.codigo_rol == 4) {
+            document.getElementById('navegacion_consulta').style.display = "block";
+        }
+
+    }
+    if (usuarioValido == true) {
+        obtenerLineas();
+    }
+
+}
 
 
 function obtenerLineas() {
@@ -38,7 +67,7 @@ function addItem() {
     let descripcion = document.getElementById('descripcion');
     let lineaComidaElegida = document.getElementById('combos');
     let contenido = document.getElementById('contenido');
-    let foto = 'foto';
+    let fotoV = document.getElementById('foto');
     let user = 'karla';
 
 
@@ -66,7 +95,7 @@ function addItem() {
             contenido: contenido.value,
             linea_comida: lineaComidaElegida.value,
             usuario: user,
-            foto: foto
+            foto: fotoV.value.toString()
         };
 
         fetch(uri, {
@@ -77,9 +106,10 @@ function addItem() {
             },
             body: JSON.stringify(item)
         }).then(response => response.text())
-            .then(text => alert(text))            
+            .then(text => alert(text))
             .catch(err => console.log('error', err));
         $('#formulario').trigger("reset");
 
     };
 }
+

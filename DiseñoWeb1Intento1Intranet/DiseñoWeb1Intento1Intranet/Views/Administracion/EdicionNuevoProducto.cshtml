@@ -1,9 +1,6 @@
 ﻿
-@{
-    ViewBag.Title = "EdicionNuevoProducto";
-    Layout = null;
-
-}
+@{ ViewBag.Title = "EdicionNuevoProducto";
+                Layout = null; }
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +9,10 @@
     <link rel="stylesheet" href="~/Content/editar_nuevo_consecutivo.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+
+    <link href="~/Content/EsconderNav.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-  
+
 </head>
 <body>
     <nav>
@@ -28,16 +27,16 @@
         </div>
         <div class="navRight">
             <ul>
-                <li>
+                <li class="navegacion_seguridad" id="navegacion_seguridad">
                     <a href="#">Seguridad</a>
                     <ul class="dropdownSeguridad">
-                        <li><a href="../Seguridad/usuarios.html">Usuarios</a></li>
-                        <li><a href="../Seguridad/roles.html">Roles</a></li>
-                        <li><a href="../Seguridad/cambiar-clave.html">Cambiar contraseña</a></li>
-                        <li><a href="../Seguridad/login.html">Login</a></li>
+                        <li><a href="./views/Seguridad/usuarios.html">Usuarios</a></li>
+                        <li><a href="./views/Seguridad/roles.html">Roles</a></li>
+                        <li><a href="./views/Seguridad/cambiar-clave.html">Cambiar contraseña</a></li>
+                        <li><a href="./views/Seguridad/login.html">Login</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="navegacion_administracion" id="navegacion_administracion">
                     <a href="#">Administración</a>
                     <ul class="dropdownAdministracion">
                         <li><a href='@Url.Action("Consecutivos", "Administracion") '>Consecutivos</a></li>
@@ -46,10 +45,10 @@
                         <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>                       
+                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="navegacion_consulta" id="navegacion_consulta">
                     <a href="#">Consultas</a>
                     <ul class="dropdownConsulta">
                         <li><a href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
@@ -104,7 +103,7 @@
                     <tr>
                         <th>Foto</th>
                         <td style="text-align:center ">
-                            <img src="" alt="Imagen Producto" id="imagenComida" style="width: 200px;"   />
+                            <img src="" alt="Imagen Producto" id="imagenComida" style="width: 200px;" />
                         </td>
                     </tr>
                 </table>
