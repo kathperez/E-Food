@@ -148,6 +148,7 @@
     <Content Include="Content\consultas.css" />
     <Content Include="Content\editarMedioPagoTipoTarjeta.css" />
     <Content Include="Content\editar_nuevo_consecutivo.css" />
+    <Content Include="Content\EsconderNav.css" />
     <Content Include="Content\index.css" />
     <Content Include="Content\medios_de_pago.css" />
     <Content Include="Content\nav-style.css" />
@@ -186,10 +187,13 @@
     <Content Include="JS\Administracion\TiqueteDescuentoEditar.js" />
     <Content Include="JS\Administracion\TiqueteDescuentoNuevo.js" />
     <Content Include="JS\Administracion\TiqueteDescuentoVer.js" />
+    <Content Include="JS\Bienvenida.js" />
     <Content Include="JS\Consultas\ConsultaBitacora.js" />
     <Content Include="JS\Consultas\ConsultaBitacora2.js" />
     <Content Include="JS\Consultas\ConsultaErrorIntra.js" />
     <Content Include="JS\Consultas\ConsultaProducto.js" />
+    <Content Include="JS\Seguridad\LoginUsuario.js" />
+    <Content Include="JS\Seguridad\RolPermiso.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -245,10 +249,10 @@
     <Content Include="Views\Consultas\Pedidos.cshtml" />
     <Content Include="Views\Consultas\ErroresIntra.cshtml" />
     <Content Include="Views\Consultas\Productos.cshtml" />
+    <Content Include="Views\Home\Bienvenida.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="JS\Seguridad\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
