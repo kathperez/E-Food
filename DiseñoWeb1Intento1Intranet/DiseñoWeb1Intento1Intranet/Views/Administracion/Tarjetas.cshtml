@@ -47,7 +47,7 @@
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
                         <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
-                     
+
                     </ul>
                 </li>
                 <li>
@@ -91,6 +91,7 @@
             <h3><a href='@Url.Action("NuevaTarjeta", "Administracion") '>NUEVO!</a></h3>
         </div>
     </div>
-    <script src="~/JS/Administracion/TarjetasVer.js"></script>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    <script src="~/JS/Administracion/TarjetaVer2.js"></script>
 </body>
 </html>
