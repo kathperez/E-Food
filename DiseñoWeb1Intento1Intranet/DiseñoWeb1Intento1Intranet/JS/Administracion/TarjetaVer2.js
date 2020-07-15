@@ -2,7 +2,8 @@
     console.log("Entró al onload");
     var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
     validar(usuarioRoles);
-    
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
 };
 let ArrTarjetas = [];
 
@@ -13,11 +14,15 @@ var permiso;
 var validar = (usuarioRoles) => {
     console.log('dentro de validar');
     console.log("usuario Roles");
-    console.log(JSON.parse(usuarioRoles));
+    console.log(usuarioRoles);
     console.log("usuario Acceso");
     console.log(rolesAcceso);
     permiso = false;
-    for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else
+    {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
         for (j = 0; j < rolesAcceso.length; j++) {
             if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
                 permiso = true;
@@ -26,17 +31,16 @@ var validar = (usuarioRoles) => {
         }
     }
 
+ }
+
     if (permiso) {
+        console.log("dentro de permiso tarjetas aprobados");
        const URLGet = "https://localhost:44308/api/Tarjeta";
         list(URLGet).catch((e) => console.error(e));
     } else {
         alert('Alerta!! no estas autorizado para acceder a esta página');
-        $(document).ready(function () {
-            window.setTimeout(function () {
-                var url = $("#RedirectTo").val();
-                location.href = url;
-            }, 3000);
-        });
+        var url = $("#RedirectTo").val();
+        location.href = url;      
     }
 }
 
@@ -146,5 +150,18 @@ function eliminar(id) {
         .catch(err => console.log('error', err));
 
 
+}
+
+
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;     
+    }
 }
 //window.location.href = '/Administracion/EdicionNuevoConsecutivo ';

@@ -36,12 +36,12 @@
 
     }
 
-    function abrir(url) {
-        var a = document.createElement("a");
-        a.target = "_blank";
-        a.href = url;
-        a.click();
-    }
+    //function abrir(url) {
+    //    var a = document.createElement("a");
+    //    a.target = "_blank";
+    //    a.href = url;
+    //    a.click();
+    //}
 
     var init = () => {
         mostrarUsuarios();
