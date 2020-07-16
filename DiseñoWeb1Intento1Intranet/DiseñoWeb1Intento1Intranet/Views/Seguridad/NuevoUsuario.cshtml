@@ -1,17 +1,20 @@
 ﻿
-@{ Layout = null;
+@{
+    Layout = null;
 }
+
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="~/Content/index.css">
+    <title>Seguridad</title>
+    <link href="~/Content/nav-style.css" rel="stylesheet" />
+    <link href="~/Content/crear-usuario.css" rel="stylesheet" />
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">  
-    <link href="~/Content/EsconderNav.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/JS/Bienvenida.js"></script>
 </head>
 <body>
     <nav>
@@ -29,8 +32,8 @@
                 <li class="navegacion_seguridad" id="navegacion_seguridad">
                     <a href="#">Seguridad</a>
                     <ul class="dropdownSeguridad">
-                        <li><a href='@Url.Action("VerUsuario", "Seguridad") '>Usuarios</a></li>
-                        <li><a href='@Url.Action("VerUsuario", "Seguridad") '>Roles</a></li>
+                        <li><a href='@Url.Action("NuevoUsuario", "Seguridad") '>Agregar Usuarios</a></li>
+                        <li><a href='@Url.Action("MenuUsuario", "Seguridad") '>Roles</a></li>
                         <li><a href='@Url.Action("CambiarContrasena", "Seguridad") '>Cambiar contraseña</a></li>
 
                     </ul>
@@ -57,7 +60,7 @@
                     </ul>
                 </li>
                 <li class="door">
-                    <a href="#" id="salir">
+                    <a href="#">
                         <svg height="21px" viewBox="0 0 500 450" width="20px" xmlns="http://www.w3.org/2000/svg">
                             <path d="m320 277.335938c-11.796875 0-21.332031 9.558593-21.332031 21.332031v85.335937c0 11.753906-9.558594 21.332032-21.335938 21.332032h-64v-320c0-18.21875-11.605469-34.496094-29.054687-40.554688l-6.316406-2.113281h99.371093c11.777344 0 21.335938 9.578125 21.335938 21.335937v64c0 11.773438 9.535156 21.332032 21.332031 21.332032s21.332031-9.558594 21.332031-21.332032v-64c0-35.285156-28.714843-63.99999975-64-63.99999975h-229.332031c-.8125 0-1.492188.36328175-2.28125.46874975-1.027344-.085937-2.007812-.46874975-3.050781-.46874975-23.53125 0-42.667969 19.13281275-42.667969 42.66406275v384c0 18.21875 11.605469 34.496093 29.054688 40.554687l128.386718 42.796875c4.351563 1.34375 8.679688 1.984375 13.226563 1.984375 23.53125 0 42.664062-19.136718 42.664062-42.667968v-21.332032h64c35.285157 0 64-28.714844 64-64v-85.335937c0-11.773438-9.535156-21.332031-21.332031-21.332031zm0 0" />
                             <path d="m505.75 198.253906-85.335938-85.332031c-6.097656-6.101563-15.273437-7.9375-23.25-4.632813-7.957031 3.308594-13.164062 11.09375-13.164062 19.714844v64h-85.332031c-11.777344 0-21.335938 9.554688-21.335938 21.332032 0 11.777343 9.558594 21.332031 21.335938 21.332031h85.332031v64c0 8.621093 5.207031 16.40625 13.164062 19.714843 7.976563 3.304688 17.152344 1.46875 23.25-4.628906l85.335938-85.335937c8.339844-8.339844 8.339844-21.824219 0-30.164063zm0 0" />
@@ -68,15 +71,51 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Inicio</p>
+        <p>Usted esta en: Crear usuario</p>
     </div>
     <div class="container">
         <div class="content">
-            <h1>BIENVENIDOS</h1>
-            <h2>La Tabola</h2>
+            <h1>Crear usuario</h1>
+            <form class="login-form" action="" id="formulario" method="post">
+                <div class="img-container">
+                    <svg enable-background="new 0 0 480 480" height="95px" viewBox="0 0 480 480" width="95px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m402.001 424.743v47.257c0 4.418-3.582 8-8 8s-8-3.582-8-8v-47.257c0-36.794-29.775-66.572-66.573-66.571-17.411 0-33.208-8.87-42.258-23.728-2.299-3.773-1.103-8.695 2.67-10.994 3.772-2.3 8.695-1.103 10.994 2.67 6.123 10.051 16.812 16.051 28.594 16.051 45.637 0 82.573 36.93 82.573 82.572zm-133.47-61.948-28.53 22.087-48.508-37.555c10.471-8.411 17.242-20.645 18.339-34.54 9.573 2.818 19.697 4.337 30.17 4.337 59 0 107-48 107-107 0-.622.014-56.012-.026-56.632-.272-4.328-3.881-7.493-7.974-7.493-1.37 0-11.227 1.95-20.876-3.855-15.048-9.053-15.125-28.897-15.124-29.096.039-6.5-7.311-10.336-12.622-6.579-32.952 23.327-71.536 39.145-113.433 45.01-4.375.613-7.426 4.656-6.813 9.032.56 4 3.986 6.892 7.913 6.892 1.26 0 27.2-3.175 56.687-13.885 18.998-6.9 37.201-15.904 54.268-26.833 5.897 22.126 22.434 34.435 42.001 35.546v47.893c0 50.178-40.822 91-91 91s-91-40.822-91-91v-56.124c0-4.418-3.582-8-8-8s-8 3.582-8 8v56.125c0 42.542 24.958 79.362 61 96.595v2.11c0 18.441-14.944 33.341-33.427 33.341-10.121 0-20.093 1.831-29.526 5.437l-5.165-4.111c-40.531-32.259-48.122-89.207-20.481-130.698 11.78-17.683 18.599-38.833 18.599-61.462v-43.333c0-50.731 41.271-92.004 92-92.004h48c50.729 0 92 41.271 92 92v43.333c0 22.011 6.401 43.221 18.511 61.336 22.148 33.131 22.104 76.614-.781 109.822-2.507 3.638-1.591 8.62 2.047 11.127 3.638 2.506 8.619 1.59 11.126-2.048 26.641-38.655 26.672-89.254.909-127.793-10.345-15.475-15.813-33.609-15.813-52.444v-43.333c0-59.551-48.449-108-108-108h-48c-59.551 0-108 48.451-108 108.004v43.329c0 18.78-5.503 36.967-15.916 52.597-32.255 48.422-23.114 114.278 23.327 151.671-22.814 14.966-37.411 40.382-37.411 69.142v47.257c0 4.418 3.582 8 8 8s8-3.582 8-8v-47.257c0-36.795 29.775-66.572 66.573-66.571 5.302 0 10.54-.841 15.563-2.498l58.966 45.651c2.884 2.232 6.912 2.232 9.795 0l33.427-25.879c3.494-2.705 4.133-7.729 1.428-11.223-2.704-3.492-7.728-4.133-11.223-1.428z" />
+                    </svg>
+                </div>
+                <br />
+                <div class="input-container">
+                    <label for="user"><b>Usuario</b></label>
+                    <input type="text" placeholder="Digite su usuario" name="usuario" id="usuario" required>
+                    <br />
+                    <br />
+                    <label for="psw"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Digite su contraseña" name="contrasena" id="contrasena" required>
+                    <br />
+                    <br />
+                    <label for="psw"><b>Confirmar contraseña</b></label>
+                    <input type="password" placeholder="Digite su contraseña" name="contrasena2" id="confirmarContrasena" required>
+                    <br />
+                    <br />
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Digite su email" name="email" id="email" required>
+                    <br />
+                    <br />
+                    <label for="pregunta-seguridad"><b>Pregunta de seguridad</b></label>
+                    <input type="text" placeholder="Digite su pregunta de seguridad" name="pregunta" id="pregunta" required>
+                    <br />
+                    <br />
+                    <label for="respuesta-seguridad"><b>Respuesta de seguridad</b></label>
+                    <input type="text" placeholder="Digite su respuesta de seguridad" name="respuesta" id="respuesta" required>
+                    <br />
+                    <br />
+                    <button type="submit" id="crear">Registrarse</button>
+                </div>
+            </form>
         </div>
     </div>
     @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
     @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
+    <script src="~/JS/Seguridad/NuevoUsuario.js"></script>
 </body>
 </html>
+

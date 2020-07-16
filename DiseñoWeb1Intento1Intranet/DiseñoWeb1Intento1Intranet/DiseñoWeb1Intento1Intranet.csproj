@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AdministracionController.cs" />
     <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SeguridadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,15 +144,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cambiar-clave.css" />
     <Content Include="Content\consecutivos-y-tipos-de-precio.css" />
     <Content Include="Content\consecutivos_tipos_precio.css" />
     <Content Include="Content\consultas.css" />
+    <Content Include="Content\crear-usuario.css" />
     <Content Include="Content\editarMedioPagoTipoTarjeta.css" />
     <Content Include="Content\editar_nuevo_consecutivo.css" />
     <Content Include="Content\EsconderNav.css" />
     <Content Include="Content\index.css" />
     <Content Include="Content\medios_de_pago.css" />
     <Content Include="Content\nav-style.css" />
+    <Content Include="Content\roles.css" />
     <Content Include="Content\tipos_tarjeta.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -190,8 +194,13 @@
     <Content Include="JS\Consultas\ConsultaBitacora.js" />
     <Content Include="JS\Consultas\ConsultaErrorIntra.js" />
     <Content Include="JS\Consultas\ConsultaProducto.js" />
+    <Content Include="JS\Seguridad\CambiarContrasena.js" />
+    <Content Include="JS\Seguridad\EditarUsuario.js" />
     <Content Include="JS\Seguridad\LoginUsuario.js" />
+    <Content Include="JS\Seguridad\NuevoUsuario.js" />
     <Content Include="JS\Seguridad\RolPermiso.js" />
+    <Content Include="JS\Seguridad\VerRol.js" />
+    <Content Include="JS\Seguridad\VerUsuario.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -248,6 +257,11 @@
     <Content Include="Views\Consultas\ErroresIntra.cshtml" />
     <Content Include="Views\Consultas\Productos.cshtml" />
     <Content Include="Views\Home\Bienvenida.cshtml" />
+    <Content Include="Views\Seguridad\NuevoUsuario.cshtml" />
+    <Content Include="Views\Seguridad\EditarUsuario.cshtml" />
+    <Content Include="Views\Seguridad\EditarRol.cshtml" />
+    <Content Include="Views\Seguridad\VerUsuario.cshtml" />
+    <Content Include="Views\Seguridad\CambiarContrasena.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

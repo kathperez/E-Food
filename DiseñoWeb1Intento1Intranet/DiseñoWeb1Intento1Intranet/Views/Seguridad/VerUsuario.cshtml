@@ -1,17 +1,20 @@
 ﻿
-@{ Layout = null;
+@{
+    Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="~/Content/index.css">
+    <title>Seguridad</title>
+    <link rel="stylesheet" href="~/Content/nav-style.css">
+    <link rel="stylesheet" href="~/Content/roles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">  
-    <link href="~/Content/EsconderNav.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/JS/Bienvenida.js"></script>
+    
+
 </head>
 <body>
     <nav>
@@ -26,16 +29,15 @@
         </div>
         <div class="navRight">
             <ul>
-                <li class="navegacion_seguridad" id="navegacion_seguridad">
+                <li id="navegacion_seguridad">
                     <a href="#">Seguridad</a>
                     <ul class="dropdownSeguridad">
-                        <li><a href='@Url.Action("VerUsuario", "Seguridad") '>Usuarios</a></li>
-                        <li><a href='@Url.Action("VerUsuario", "Seguridad") '>Roles</a></li>
-                        <li><a href='@Url.Action("CambiarContrasena", "Seguridad") '>Cambiar contraseña</a></li>
-
+                        <li><a href='@Url.Action("Seguridad", "Usuarios") '>Usuarios</a></li>
+                        <li><a href='@Url.Action("Seguridad", "Roles") '>Roles</a></li>
+                        <li><a href='@Url.Action("Seguridad", "Contrasena") '>Cambiar contraseña</a></li>
                     </ul>
                 </li>
-                <li class="navegacion_administracion" id="navegacion_administracion">
+                <li>
                     <a href="#">Administración</a>
                     <ul class="dropdownAdministracion">
                         <li><a href='@Url.Action("Consecutivos", "Administracion") '>Consecutivos</a></li>
@@ -45,9 +47,10 @@
                         <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
                         <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
                         <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
+
                     </ul>
                 </li>
-                <li class="navegacion_consulta" id="navegacion_consulta">
+                <li>
                     <a href="#">Consultas</a>
                     <ul class="dropdownConsulta">
                         <li><a href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
@@ -68,15 +71,30 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Inicio</p>
+        <p>Usted esta en: Roles</p>
     </div>
     <div class="container">
-        <div class="content">
-            <h1>BIENVENIDOS</h1>
-            <h2>La Tabola</h2>
+        <div class="content-consecutivo">
+            <h1>Lista de Usuarios</h1>
+            <br>
+            <table>
+                <tr>
+                    <th>Usuario</th>
+                    <th colspan="1">Estado</th>
+                    <th colspan="3">Configuración</th>
+
+                </tr>
+                <tbody id="contenido">
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h3><a href='@Url.Action("NuevoUsuario", "Seguridad") '>NUEVO!</a></h3>
         </div>
     </div>
     @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToVerUsuario", Url.Action("VerUsuario", "Seguridad"))
     @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
+    <script src="~/JS/Seguridad/VerUsuario.js"></script>
 </body>
 </html>
