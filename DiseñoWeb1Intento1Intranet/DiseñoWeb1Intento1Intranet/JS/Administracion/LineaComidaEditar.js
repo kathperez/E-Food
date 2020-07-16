@@ -8,39 +8,17 @@
     console.log(index);
     var arreglo = [];
     arreglo = localStorage.getItem('lineaComida');
-    arreglo = JSON.parse(arreglo);
-    console.log("Lo que viene de arreglo");
-    console.log(arreglo[index]);
+    arreglo = JSON.parse(arreglo);  
     localStorage.removeItem('lineaComida'); // Clear the localStorage
-    var idconsecViejo = arreglo[index].cod_consec;
-    var tipoConsecutivoViejo = arreglo[index].cod_consec;
-    var prefijo;
-    var estadoPref = () => {
-        if ($('#posee').prop('checked')) {
-            prefijo = "V";
-            $("#pref").prop('disabled', false);
-        } else {
-            prefijo = "F";
-            $("#pref").prop('disabled', true);
-        }
-    }
-    $('#posee').change(function () {
-        estadoPref();
-    });
-
+   
     var modificar = () => {
-        console.log("Dentro de modificar antes de ver valores de array");
-        console.log(arreglo[index]);
-        $('#codigo').val(arreglo[index].codigo);
-        $('#descripcion').val(arreglo[index].descripcion);
-        console.log(arreglo[index].desc);
 
-        if (arreglo[index].posee_p == "V") {
-            $('#posee').prop("checked", true)
-            console.log("tiene prefijo");
+        if (arreglo == null) {
+            console.log("vacio");
+        } else {
+            $('#codigo').val(arreglo[index].codigo);
+            $('#descripcion').val(arreglo[index].descripcion);            
         }
-        $('#pref').val(arreglo[index].pref);
-
     }
     const uri = "https://localhost:44308/api/LineaComida/1";
     var editar = () => {
@@ -48,8 +26,13 @@
         var verificar = true;
         let codigo = document.getElementById('codigo');  
         let descripcion = document.getElementById('descripcion');            
-        let user = 'karla';   
-        if (!descripcion.value) {
+        let user = localStorage['user'];
+        if (!codigo.value) {
+            alert('campo codigo requerido');
+            codigo.focus();
+            verificar = false;
+        }
+        else if (!descripcion.value) {
             console.log('campo descripcion requerido');
             descripcion.focus();
             verificar = false;
@@ -74,11 +57,25 @@
             $('#formulario').trigger("reset");
         }
     }
+    function salir() {
+
+        var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+        if (confirmacion == true) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('rolesUsuario');
+            console.log("se eligio eliminar");
+            var url = $("#RedirectToIndex").val();
+            location.href = url;
+        }
+    }
+
     var init = () => {
         console.log("Imprimiendo el array desde el inicio");
         modificar();
         var btnPut = document.getElementById('guardar');
         btnPut.onclick = editar;
+        var btnSalir = document.getElementById('salir');
+        btnSalir.onclick = salir;
     }
 
     init();

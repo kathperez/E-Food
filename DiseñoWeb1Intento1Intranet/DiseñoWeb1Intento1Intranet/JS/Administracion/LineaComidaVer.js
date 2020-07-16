@@ -1,9 +1,48 @@
 ﻿window.onload = function () {
     console.log("Entró al onload");
-    const URLGet = "https://localhost:44308/api/LineaComida";
-    list(URLGet).catch((e) => console.error(e));
+    var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
+    validar(usuarioRoles);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
+
+   
 };
 let ArrLC= [];
+var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+
+
+var permiso;
+var validar = (usuarioRoles) => {
+    console.log('dentro de validar');
+    console.log("usuario Roles");
+    console.log(usuarioRoles);
+    console.log("usuario Acceso");
+    console.log(rolesAcceso);
+    permiso = false;
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+            for (j = 0; j < rolesAcceso.length; j++) {
+                if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
+                    permiso = true;
+                    break;
+                }
+            }
+        }
+
+    }
+
+    if (permiso) {
+        console.log("dentro de permiso tarjetas aprobados");
+        const URLGet = "https://localhost:44308/api/LineaComida";
+        list(URLGet).catch((e) => console.error(e));
+    } else {
+        alert('Alerta!! no estas autorizado para acceder a esta página');
+        var url = $("#RedirectTo").val();
+        location.href = url;
+    }
+}
 
 async function list(LCGet = "") {
     try {
@@ -86,8 +125,9 @@ $("#contenido").on('click', 'button', function () {
 
 
 function eliminar(id) {
+    let user = localStorage['user'];
     var data = {
-        usuario: "karla",
+        usuario: user,
         codigo:id
     };
     var url = 'https://localhost:44308/api/LineaComida/1';
@@ -109,9 +149,18 @@ function eliminar(id) {
             list(URLGet).catch((e) => console.error(e));
         })
         .catch(err => console.log('error', err));
-
-
 }
 
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
+    }
+}
 
 //window.location.href = '/Administracion/EdicionNuevoConsecutivo ';

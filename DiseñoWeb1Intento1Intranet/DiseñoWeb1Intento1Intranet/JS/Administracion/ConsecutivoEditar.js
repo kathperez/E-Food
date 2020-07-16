@@ -10,23 +10,25 @@
     console.log(index);
     var arreglo = [];
     arreglo = localStorage.getItem('consecutivos');
-    arreglo = JSON.parse(arreglo);
-    console.log("Lo que viene de arreglo");  
-    console.log(arreglo[index]);
+    arreglo = JSON.parse(arreglo);  
     localStorage.removeItem('consecutivos'); // Clear the localStorage
    
     var modificar = () => {
         console.log("Dentro de modificar antes de ver valores de array");
-        console.log(arreglo[index]);
-        $('#consecutivo').val(arreglo[index].consecutivo);
-        $('#descripcion').val(arreglo[index].desc);
-        console.log(arreglo[index].desc);
+        if (arreglo == null) {
+            console.log("vacio");
+        } else
+        {
+             $('#consecutivo').val(arreglo[index].consecutivo);
+                    $('#descripcion').val(arreglo[index].desc);
+                    console.log(arreglo[index].desc);
      
-        if (arreglo[index].posee_p == "V") {
-            $('#posee').prop("checked", true)
-            console.log("tiene prefijo");
+                    if (arreglo[index].posee_p == "V") {
+                        $('#posee').prop("checked", true)
+                        console.log("tiene prefijo");
+                    }
+                    $('#pref').val(arreglo[index].pref);
         }
-        $('#pref').val(arreglo[index].pref);
 
     }
     const uri = "https://localhost:44308/Api/Consecutivo/1";
@@ -37,7 +39,7 @@
         let addNameDesc = document.getElementById('descripcion');
         let addNameCons = document.getElementById('consecutivo');
         let posee_prefijo;
-        let user = 'karla';
+        let user = localStorage['user'];
         let prefij = document.getElementById('pref');
         var estadoPref = () => {
             if (document.getElementById('posee').checked) {
@@ -54,8 +56,12 @@
         $('#posee').change(function () {
             estadoPref();
         });
-
         if (!addNameCons.value) {
+            alert('campo codigo requerido');
+            addNameCons.focus();
+            verificar = false;
+        }
+        else if (!addNameCons.value) {
             console.log('Espacio de consecutivo requerido');
             addNameCons.focus();
             verificar = false;
@@ -87,12 +93,25 @@
             $('#formulario').trigger("reset");
         }
     }
+
+    function salir() {
+
+        var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+        if (confirmacion == true) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('rolesUsuario');
+            console.log("se eligio eliminar");
+            var url = $("#RedirectToIndex").val();
+            location.href = url;
+        }
+    }
     var init = () => {
         console.log("Imprimiendo el array desde el inicio");
-        modificar();
-      
+        modificar();      
         var btnPut = document.getElementById('guardar');
         btnPut.onclick = edit;
+        var btnSalir = document.getElementById('salir');
+        btnSalir.onclick = salir;
     }
 
 

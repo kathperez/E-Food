@@ -28,9 +28,9 @@
         var verificar = true;
         let codigo = document.getElementById('codigo');
         let descripcion = document.getElementById('descripcion');
-        let user = 'karla';
+        let user = localStorage['user'];
         if (!codigo.value) {
-            console.log('campo descripcion requerido');
+            alert('campo codigo requerido');
             codigo.focus();
             verificar = false;
         }

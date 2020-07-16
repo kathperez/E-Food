@@ -116,6 +116,8 @@
             <br />
         </div>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Consultas/ConsultaErrorIntra.js"></script>
 </body>
 </html>

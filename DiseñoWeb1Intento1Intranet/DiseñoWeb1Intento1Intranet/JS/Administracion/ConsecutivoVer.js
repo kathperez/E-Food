@@ -1,11 +1,50 @@
 ﻿window.onload = function ()
     {   
-        console.log("Entró al onload");  
-        const consecutivoGet = "https://localhost:44308/Api/Consecutivo";
-        
-        list(consecutivoGet).catch((e) => console.error(e));    
+    console.log("Entró al onload");  
+    var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
+    validar(usuarioRoles);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
+      
 };
 let Arrconsecutivo = [];
+
+//validarUsuario(usuarioRoles);    
+var rolesAcceso = ['Administrador'];//Cambiar aquí los roles permitidos
+
+
+var permiso;
+var validar = (usuarioRoles) => {
+    console.log('dentro de validar');
+    console.log("usuario Roles");
+    console.log(usuarioRoles);
+    console.log("usuario Acceso");
+    console.log(rolesAcceso);
+    permiso = false;
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+            for (j = 0; j < rolesAcceso.length; j++) {
+                if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
+                    permiso = true;
+                    break;
+                }
+            }
+        }
+
+    }
+
+    if (permiso) {
+        console.log("dentro de permiso tarjetas aprobados");
+        const consecutivoGet = "https://localhost:44308/Api/Consecutivo";
+        list(consecutivoGet).catch((e) => console.error(e));    
+    } else {
+        alert('Alerta!! no estas autorizado para acceder a esta página');
+        var url = $("#RedirectTo").val();
+        location.href = url;
+    }
+}
 
 async function list(userGet = "") {
     try {
@@ -97,8 +136,9 @@ $("#contenido").on('click', 'button', function () {
 
 
 function eliminar(consecutivo, descripcion) {
+    let user = localStorage['user'];
     var data = {
-       usuario: "karla",        
+        usuario: user        
     };
     var url = 'https://localhost:44308/api/Consecutivo?id_conse=' + consecutivo + '&descripcion=' + descripcion;
     console.log(url);
@@ -119,6 +159,18 @@ function eliminar(consecutivo, descripcion) {
         .catch(err => console.log('error', err));
     $('#formulario').trigger("reset");
     
+}
+
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
+    }
 }
 
 

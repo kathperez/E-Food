@@ -3,6 +3,8 @@
     var usuario = localStorage['user'];  
     console.log("dentro de load de bienvinido");
     console.log(usuario);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
     const URLGet = "https://localhost:44308/api/UsuarioRol/" + usuario;
     list(URLGet).catch((e) => console.error(e));
 };
@@ -67,6 +69,18 @@ function generarNav(datos) {
     console.log(ArrRoles[0])
 }
 
+
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
+    }
+}
 
 
 

@@ -133,7 +133,7 @@
         let tipoPrecio = document.getElementById('tipoPrecio');
         let precio = document.getElementById('precio');
         let producto = codTest;
-        let user = 'karla';
+        let user = localStorage['user'];
         if (!tipoPrecio.value) {
             console.log('Espacio de descripción requerido');
             tipoPrecio.focus();
@@ -188,7 +188,7 @@
         let tipoPrecio = document.getElementById('tipoPrecio');
         let precio = document.getElementById('precio');
         let producto = codTest;
-        let user = 'karla';
+        let user = localStorage['user'];
         if (!tipoPrecio.value) {
             console.log('Espacio de descripción requerido');
             tipoPrecio.focus();
@@ -232,30 +232,47 @@
             $('#precio').value = '';
         }
     }
+    function salir() {
+
+        var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+        if (confirmacion == true) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('rolesUsuario');
+            console.log("se eligio eliminar");
+            var url = $("#RedirectToIndex").val();
+            location.href = url;
+        }
+    }
 
     var codTest = '';
     var init = () => {
 
         var index = localStorage['idIndexProducto'];
-        localStorage.removeItem('idIndexProducto'); // Clear the localStorage
-        console.log("Lo que viene de index");
-        console.log(index);
+        localStorage.removeItem('idIndexProducto'); // Clear the localStorage        
         var arreglo = [];
         arreglo = localStorage.getItem('producto');
         arreglo = JSON.parse(arreglo);
-        console.log("Lo que viene de arreglo");
-        console.log(arreglo[index]);
-        localStorage.removeItem('producto'); // Clear the localStorage   
-        let titulo = document.getElementById("titulo");
-        titulo.textContent = 'Lista de Precios: ' + arreglo[index].descripcion;
-        const URLGet = "https://localhost:44308/api/PrecioProducto/" + arreglo[index].codigo;
-        list(URLGet).catch((e) => console.error(e));
-        obtenerLineas();
-        codTest = arreglo[index].codigo;
-        const reposBtn = document.getElementById("crear");        
-        reposBtn.onclick = addItem;
-        const refrescarBtn = document.getElementById("actualizar");
-        refrescarBtn.onclick = actalizar;
+        if (arreglo == undefined) {
+            alert("Error no se encuentra dentro de un producto, favor regresar al menú de productos y repetir el proceso ");
+
+        } else {
+            console.log("Lo que viene de arreglo");
+            console.log(arreglo[index]);
+            localStorage.removeItem('producto'); // Clear the localStorage   
+            let titulo = document.getElementById("titulo");
+            titulo.textContent = 'Lista de Precios: ' + arreglo[index].descripcion;
+            const URLGet = "https://localhost:44308/api/PrecioProducto/" + arreglo[index].codigo;
+            list(URLGet).catch((e) => console.error(e));
+            obtenerLineas();
+            codTest = arreglo[index].codigo;
+            const reposBtn = document.getElementById("crear");
+            reposBtn.onclick = addItem;
+            const refrescarBtn = document.getElementById("actualizar");
+            refrescarBtn.onclick = actalizar;
+           
+        }
+        var btnSalir = document.getElementById('salir');
+        btnSalir.onclick = salir;
     };
 
     init();

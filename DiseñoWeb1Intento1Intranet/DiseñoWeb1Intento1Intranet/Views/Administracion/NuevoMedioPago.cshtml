@@ -117,7 +117,9 @@
                 <br>
                 <button type="submit" id="crear">Crear procesador</button>
             </div>
-        </form>       
+        </form>
+        @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+        @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     </div>
    
 </body>

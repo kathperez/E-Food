@@ -8,7 +8,7 @@
 let ArrTarjetas = [];
 
    //validarUsuario(usuarioRoles);    
-    var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
 
 var permiso;
 var validar = (usuarioRoles) => {
@@ -125,9 +125,10 @@ $("#contenido").on('click', 'button', function () {
 
 
 function eliminar(id) {
+    let user = localStorage['user'];
     var data = {
         codigo: id,
-        usuario: "karla"
+        usuario: user
     };
     var url = 'https://localhost:44308/api/Tarjeta/11';
     console.log(url);

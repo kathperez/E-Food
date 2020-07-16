@@ -92,6 +92,8 @@
             <h3><a href='@Url.Action("NuevoTipoPrecio", "Administracion") '>NUEVO!</a></h3>
         </div>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Administracion/TipoPrecioVer.js"></script>
 </body>
 </html>

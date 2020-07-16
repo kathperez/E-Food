@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <th>Descripción:</th>
-                        <td><input type="text" placeholder="Descripción" name="descripción" id="descripcion"  required></td>
+                        <td><input type="text" placeholder="Descripción" name="descripción" id="descripcion" required></td>
                     </tr>
                 </table>
                 <br>
@@ -93,5 +93,7 @@
             </div>
         </form>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
 </body>
 </html>

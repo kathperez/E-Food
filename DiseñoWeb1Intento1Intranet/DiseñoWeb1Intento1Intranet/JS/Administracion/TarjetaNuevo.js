@@ -6,10 +6,9 @@ window.onload = function () {
     var btnSalir = document.getElementById('salir');
     btnSalir.onclick = salir;
 };
-var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
-
-
 const uri = "https://localhost:44308/api/Tarjeta";
+
+var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
 var permiso;
 var validar = (usuarioRoles) => {
     console.log('dentro de validar');
@@ -32,7 +31,7 @@ var validar = (usuarioRoles) => {
 
     }
     if (permiso) {
-        console.log("dentro de permiso creat tarjetas");
+        console.log("dentro de permiso ");
         const reposBtn = document.getElementById("crear");
         reposBtn.onclick = addItem;
     } else {
@@ -47,7 +46,7 @@ function addItem() {
     console.log("dentro de agregar")
     var verificar = true;
     let descripcion = document.getElementById('descripcion');
-    let user = 'karla';
+    let user = localStorage['user'];
 
     if (!descripcion.value) {
         console.log('Espacio de descripción requerido');

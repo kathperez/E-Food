@@ -3,23 +3,21 @@
 
     //Obtengo el id que voy a modificar y lo muestro en el placeholder
     var index = localStorage['idTP'];
-    localStorage.removeItem('idTP'); // Clear the localStorage
-    console.log("Lo que viene de index");
-    console.log(index);
+    localStorage.removeItem('idTP'); // Clear the localStorage   
     var arreglo = [];
     arreglo = localStorage.getItem('tipoPrecio');
-    arreglo = JSON.parse(arreglo);
-    console.log("Lo que viene de arreglo");
-    console.log(arreglo[index]);
+    arreglo = JSON.parse(arreglo);   
     localStorage.removeItem('tipoPrecio'); // Clear the localStorage
    
     var modificar = () => {
-        console.log("Dentro de modificar antes de ver valores de array");
-        console.log(arreglo[index]);
-        $('#codigo').val(arreglo[index].codigo);
-        $('#descripcion').val(arreglo[index].descripcion);
-        console.log(arreglo[index].desc);
 
+        if (arreglo == null) {
+            console.log("vacio");
+        } else {
+            $('#codigo').val(arreglo[index].codigo);
+            $('#descripcion').val(arreglo[index].descripcion);
+            console.log(arreglo[index].desc);
+        }
     }
     const uri = "https://localhost:44308/api/TipoPrecio/1";
     var editar = () => {
@@ -27,8 +25,13 @@
         var verificar = true;
         let codigo = document.getElementById('codigo');
         let descripcion = document.getElementById('descripcion');
-        let user = 'karla';
-        if (!descripcion.value) {
+        let user = localStorage['user'];
+        if (!codigo.value) {
+            alert('campo codigo requerido');
+            codigo.focus();
+            verificar = false;
+        }
+        else if (!descripcion.value) {
             console.log('campo descripcion requerido');
             descripcion.focus();
             verificar = false;
@@ -53,11 +56,25 @@
             $('#formulario').trigger("reset");
         }
     }
+    function salir() {
+
+        var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+        if (confirmacion == true) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('rolesUsuario');
+            console.log("se eligio eliminar");
+            var url = $("#RedirectToIndex").val();
+            location.href = url;
+        }
+    }
+
     var init = () => {
         console.log("Imprimiendo el array desde el inicio");
         modificar();
         var btnPut = document.getElementById('guardar');
         btnPut.onclick = editar;
+        var btnSalir = document.getElementById('salir');
+        btnSalir.onclick = salir;
     }
 
     init();

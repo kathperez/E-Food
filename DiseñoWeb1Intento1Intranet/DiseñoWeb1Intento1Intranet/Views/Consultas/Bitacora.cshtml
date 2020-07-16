@@ -90,20 +90,19 @@
                         <input id="fecha1"
                                name="fecha1"
                                type="date"
-                               class="form-control input-md" 
-                               required/>
+                               class="form-control input-md"
+                               required />
                         Hasta:
                         <input id="fecha2"
                                name="fecha2"
                                type="date"
                                class="form-control input-md"
-                               required/>
+                               required />
                     </p>
                     <br />
                     <p>
                         Usuario:
                         <select name="estado" id="usuario">
-                          
                         </select>
                         <button id="buscar">Seleccionar</button>
                     </p>
@@ -119,7 +118,6 @@
                         </tr>
                     </thead>
                     <tbody id="contenido">
-                        
                     </tbody>
                 </table>
             </div>
@@ -127,5 +125,7 @@
             <br />
         </div>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
 </body>
 </html>

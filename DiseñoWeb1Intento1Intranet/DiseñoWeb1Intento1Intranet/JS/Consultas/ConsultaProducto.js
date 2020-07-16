@@ -3,9 +3,51 @@ window.onload = function () {
 
     obtenerLineas();
     console.log('after obtener lineas');
-    const reposBtn = document.getElementById("buscar");
-    reposBtn.onclick = buscarProducto;
+    var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
+    validar(usuarioRoles);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
+
+   
 };
+
+var rolesAcceso = ['Administrador', 'Consulta'];//Cambiar aquí los roles permitidos
+
+var permiso;
+var validar = (usuarioRoles) => {
+    console.log('dentro de validar');
+    console.log("usuario Roles");
+    console.log(usuarioRoles);
+    console.log("usuario Acceso");
+    console.log(rolesAcceso);
+    permiso = false;
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+            for (j = 0; j < rolesAcceso.length; j++) {
+                if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
+                    permiso = true;
+                    break;
+                }
+            }
+        }
+
+    }
+
+    if (permiso) {
+        console.log("dentro de permiso tarjetas aprobados");
+        const reposBtn = document.getElementById("buscar");
+        reposBtn.onclick = buscarProducto;
+    } else {
+        alert('Alerta!! no estas autorizado para acceder a esta página');
+        var url = $("#RedirectTo").val();
+        location.href = url;
+    }
+}
+
+
+
 var arregloLC = [];
 const uri = "https://localhost:44308/api/Producto";
 const uriLC = "https://localhost:44308/api/LineaComida";
@@ -65,14 +107,21 @@ function buscarProducto() {
                       </tr>
         `
             cont = cont + 1;
-           // ArrTipoPrecio.push(valor);
+       
 
         }
-        //console.log("Imprimiendo el array");
-        //console.log(ArrTipoPrecio)
-        //console.log("Imprimiendo índice de array");
-        //console.log(ArrTipoPrecio[0])
+       
     }
 }
 
+function salir() {
 
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
+    }
+}
