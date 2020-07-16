@@ -9,9 +9,7 @@
     console.log(index);
     var arreglo = [];
     arreglo = localStorage.getItem('procesador');
-    arreglo = JSON.parse(arreglo);
-    console.log("Lo que viene de arreglo");
-    console.log(arreglo[index]);
+    arreglo = JSON.parse(arreglo);  
     localStorage.removeItem('procesador'); // Clear the localStorage
 
     //Llamado a API para traer tarjetas disponibles y tarjetas asignada
@@ -166,11 +164,12 @@
         if (confirmacion) {
             let codTarjetaSeleccionada = document.getElementById('tarjetasAsignadas').value;
             let codProcesador = arreglo[index].codigo;
+            let user = localStorage['user'];
             var url = 'https://localhost:44308/api/ProcesadorTarjeta?tipoTarjeta=' +
                 codTarjetaSeleccionada +
                 '&tipoProcesador=' + codProcesador;
             var datos = {
-                usuario: 'karla'
+                usuario: user
             };
 
             fetch(url, {
@@ -197,16 +196,36 @@
     }
 
 
+    function salir() {
 
+        var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+        if (confirmacion == true) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('rolesUsuario');
+            console.log("se eligio eliminar");
+            var url = $("#RedirectToIndex").val();
+            location.href = url;
+        }
+    }
     //  var codTest = '';
     var init = () => {
-        const URLGet = 'https://localhost:44308/Api/ProcesadorTarjeta/' + arreglo[index].codigo;
-        list(URLGet).catch((e) => console.error(e));
-        var btnPost = document.getElementById('asignar');
-        btnPost.onclick = agregar_tarjeta;
-        var btnDelete = document.getElementById('eliminar');
-        btnDelete.onclick = quitar_tarjeta;
-        var btnRefresh = document.getElementById('refrescar');
+        if (arreglo == undefined) {
+            alert("Error no se encuentra dentro de un procesador de pago, favor regresar al menú de medios de pago y repetir el proceso ");
+           
+        } else
+        {
+            const URLGet = 'https://localhost:44308/Api/ProcesadorTarjeta/' + arreglo[index].codigo;
+            list(URLGet).catch((e) => console.error(e));
+            var btnPost = document.getElementById('asignar');
+            btnPost.onclick = agregar_tarjeta;
+            var btnDelete = document.getElementById('eliminar');
+            btnDelete.onclick = quitar_tarjeta;
+        }
+       
+       
+        var btnSalir = document.getElementById('salir');
+        btnSalir.onclick = salir;
+       
     }
     init();
 

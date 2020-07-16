@@ -93,6 +93,9 @@
             </div>
         </form>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
+
 </body>
 </html>
 

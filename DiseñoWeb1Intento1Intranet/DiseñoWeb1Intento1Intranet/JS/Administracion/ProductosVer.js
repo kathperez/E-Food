@@ -1,38 +1,49 @@
 ﻿window.onload = function () {
     console.log("Entró al onload");
-    var usuarioRoles = localStorage['rolesUsuario'];
-    validarUsuario(usuarioRoles);
+    var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
+    validar(usuarioRoles);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
+ 
 };
 let ArrProducto = [];
 
-function validarUsuario(datos) {
+//validarUsuario(usuarioRoles);    
+var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
 
-    var usuarioValido = false;
-    for (let valor of JSON.parse(datos)) {
-        if (valor.codigo_rol == 1) {
-            document.getElementById('navegacion_seguridad').style.display = "block";
-            document.getElementById('navegacion_administracion').style.display = "block";
-            document.getElementById('navegacion_consulta').style.display = "block";
-            usuarioValido = true;
+var permiso;
+var validar = (usuarioRoles) => {
+    console.log('dentro de validar');
+    console.log("usuario Roles");
+    console.log(usuarioRoles);
+    console.log("usuario Acceso");
+    console.log(rolesAcceso);
+    permiso = false;
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+            for (j = 0; j < rolesAcceso.length; j++) {
+                if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
+                    permiso = true;
+                    break;
+                }
+            }
         }
-        if (valor.codigo_rol == 2) {
-            document.getElementById('navegacion_seguridad').style.display = "block";
-        }
-        if (valor.codigo_rol == 3) {
-            document.getElementById('navegacion_administracion').style.display = "block";
-            usuarioValido = true;
-        }
-        if (valor.codigo_rol == 4) {
-            document.getElementById('navegacion_consulta').style.display = "block";
-        }
-
     }
-    if (usuarioValido == true) {
+
+    if (permiso) {
+        console.log("dentro de permiso tarjetas aprobados");
         const URLGet = "https://localhost:44308/api/Producto";
         list(URLGet).catch((e) => console.error(e));
+    } else {
+        alert('Alerta!! no estas autorizado para acceder a esta página');
+        var url = $("#RedirectTo").val();
+        location.href = url;
     }
-
 }
+
+
 async function list(Get = "") {
     try {
         const objetoRecibido = await request(Get);
@@ -115,8 +126,9 @@ $("#contenido").on('click', 'button', function () {
 
 
 function eliminar(id) {
+    let user = localStorage['user'];
     var data = {
-        usuario: "karla",
+        usuario: user,
         cod_prod: id
     };
     var url = 'https://localhost:44308/api/Producto/1';
@@ -140,6 +152,18 @@ function eliminar(id) {
         .catch(err => console.log('error', err));
 
 
+}
+
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
+    }
 }
 
 //window.location.href = '/Administracion/EdicionNuevoConsecutivo ';

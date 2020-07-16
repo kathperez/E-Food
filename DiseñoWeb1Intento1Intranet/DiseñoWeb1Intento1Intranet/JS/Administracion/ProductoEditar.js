@@ -2,14 +2,10 @@
     'use strict';
     //Obtengo el id que voy a modificar y lo muestro en el placeholder
     var index = localStorage['idIndexProducto'];
-    localStorage.removeItem('idIndexProducto'); // Clear the localStorage
-    console.log("Lo que viene de index");
-    console.log(index);
+    localStorage.removeItem('idIndexProducto'); // Clear the localStorage  
     var arreglo = [];
     arreglo = localStorage.getItem('producto');
-    arreglo = JSON.parse(arreglo);
-    console.log("Lo que viene de arreglo");
-    console.log(arreglo[index]);
+    arreglo = JSON.parse(arreglo);    
     localStorage.removeItem('producto'); // Clear the localStorage   
     var arregloLC = [];
     const uriLC = "https://localhost:44308/api/LineaComida";
@@ -38,17 +34,19 @@
     }
 
     var modificar = () => {
-        console.log("Dentro de modificar antes de ver valores de array");
-        console.log(arreglo[index]);
-        $('#codigo').val(arreglo[index].codigo);
-        $('#descripcion').val(arreglo[index].descripcion);
-        $('#combos').val(arreglo[index].lineaComida);
-        $('#contenido').val(arreglo[index].contenido);
-        $('#foto').val(arreglo[index].foto);
-        document.getElementById("imagenComida").src = (arreglo[index].foto);
-        console.log("dentro de modificar");
-        console.log((arreglo[index].foto));
-
+        console.log("Dentro de modificar");
+        if (arreglo == null) {
+            console.log("vacio");
+        } else {
+            $('#codigo').val(arreglo[index].codigo);
+            $('#descripcion').val(arreglo[index].descripcion);
+            $('#combos').val(arreglo[index].lineaComida);
+            $('#contenido').val(arreglo[index].contenido);
+            $('#foto').val(arreglo[index].foto);
+            document.getElementById("imagenComida").src = (arreglo[index].foto);
+            console.log("dentro de modificar");
+            console.log((arreglo[index].foto));
+        }
     }
     const uri = "https://localhost:44308/api/Producto/1";
     var editar = () => {
@@ -59,10 +57,14 @@
         let descripcion = document.getElementById('descripcion');
         let lineaComidaElegida = document.getElementById('combos');
         let contenido = document.getElementById('contenido');
-        let user = 'karla';
+        let user = localStorage['user'];
         let fotoV = document.getElementById('foto');
-
-        if (!descripcion.value) {
+        if (!codigo.value) {
+            alert('campo codigo requerido');
+            codigo.focus();
+            verificar = false;
+        }
+        else if (!descripcion.value) {
             console.log('Espacio de descripción requerido');
             descripcion.focus();
             verificar = false;
@@ -106,40 +108,25 @@
         }
     }
 
-    function validarUsuario(datos) {
+    function salir() {
 
-        var usuarioValido = false;
-        for (let valor of JSON.parse(datos)) {
-            if (valor.codigo_rol == 1) {
-                document.getElementById('navegacion_seguridad').style.display = "block";
-                document.getElementById('navegacion_administracion').style.display = "block";
-                document.getElementById('navegacion_consulta').style.display = "block";
-                usuarioValido = true;
-            }
-            if (valor.codigo_rol == 2) {
-                document.getElementById('navegacion_seguridad').style.display = "block";
-            }
-            if (valor.codigo_rol == 3) {
-                document.getElementById('navegacion_administracion').style.display = "block";
-                usuarioValido = true;
-            }
-            if (valor.codigo_rol == 4) {
-                document.getElementById('navegacion_consulta').style.display = "block";
-            }
-
+        var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+        if (confirmacion == true) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('rolesUsuario');
+            console.log("se eligio eliminar");
+            var url = $("#RedirectToIndex").val();
+            location.href = url;
         }
-        if (usuarioValido == true) {
-            obtenerLineas();
-        }
-
     }
+
     var init = () => {
         console.log("Imprimiendo el array desde el inicio");
-        // obtenerLineas();  
-        var usuarioRoles = localStorage['rolesUsuario'];
-        validarUsuario(usuarioRoles);
+        obtenerLineas();       
         var btnPut = document.getElementById('guardar');
         btnPut.onclick = editar;
+        var btnSalir = document.getElementById('salir');
+        btnSalir.onclick = salir;
     }
 
     init();

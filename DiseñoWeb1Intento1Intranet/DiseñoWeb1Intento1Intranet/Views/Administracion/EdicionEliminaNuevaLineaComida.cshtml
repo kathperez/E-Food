@@ -80,7 +80,7 @@
                 <table>
                     <tr>
                         <th>Código:</th>
-                        <td><input type="text"  placeholder="Codigo" name="codigo" id="codigo" readonly></td>
+                        <td><input type="text" placeholder="Codigo" name="codigo" id="codigo" readonly></td>
                     </tr>
                     <tr>
                         <th>Descripción:</th>
@@ -92,6 +92,7 @@
             </div>
         </form>
     </div>
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Administracion/LineaComidaEditar.js"></script>
 </body>
 </html>

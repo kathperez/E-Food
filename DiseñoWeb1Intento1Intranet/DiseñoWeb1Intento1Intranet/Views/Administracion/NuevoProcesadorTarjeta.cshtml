@@ -95,16 +95,17 @@
                 <br>
                 <p>
                     Asignadas:
-                    <select name="disponibles" id="tarjetasAsignadas">                      
+                    <select name="disponibles" id="tarjetasAsignadas">
                     </select>
                     <br />
                     <br />
-                    <button id="eliminar">Eliminar</button>                   
+                    <button id="eliminar">Eliminar</button>
                 </p>
             </div>
             <br>
         </div>
     </div>
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Administracion/MedioPagoTarjetaAsignar.js"></script>
 </body>
 </html>

@@ -82,7 +82,7 @@
                     <tr>
                         <th>Descripción:</th>
                         <td>
-                            <select name="descripcion" id="descripcion" >
+                            <select name="descripcion" id="descripcion">
                                 <option value="false">Elija una opción</option>
                                 <option value="Tipos de Precio">Tipos de Precio</option>
                                 <option value="Lista de Tarjetas de Credito o Debito">Lista de Tarjetas de Credito o Debito</option>
@@ -94,7 +94,7 @@
                     </tr>
                     <tr>
                         <th>Consecutivo:</th>
-                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo" ></td>
+                        <td><input type="number" placeholder="Consecutivo" name="consecutivo" id="consecutivo"></td>
                     </tr>
                     <tr>
                         <th>Posee Prefijo:</th>
@@ -102,7 +102,7 @@
                     </tr>
                     <tr>
                         <th>Prefijo:</th>
-                        <td><input type="text" placeholder="Prefijo" name="prefijo" id="pref" ></td>
+                        <td><input type="text" placeholder="Prefijo" name="prefijo" id="pref"></td>
                     </tr>
                 </table>
                 <br>
@@ -110,7 +110,9 @@
             </div>
         </form>
     </div>
-   
-    
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
+
+
 </body>
 </html>

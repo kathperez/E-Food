@@ -1,7 +1,9 @@
 ﻿window.onload = function () {
 
-    var usuarioRoles = localStorage['rolesUsuario'];
-    validarUsuario(usuarioRoles);
+    var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
+    validar(usuarioRoles);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
     const reposBtn = document.getElementById("crear");
     reposBtn.onclick = addItem;
 };
@@ -10,34 +12,37 @@ var arregloLC = [];
 const uri = "https://localhost:44308/api/Producto";
 const uriLC = "https://localhost:44308/api/LineaComida";
 
-function validarUsuario(datos) {
-    var cont = 0;//se utiliza para obtener indice por editar
-    var usuarioValido = false;
-    for (let valor of JSON.parse(datos)) {
-        if (valor.codigo_rol == 1) {
-            document.getElementById('navegacion_seguridad').style.display = "block";
-            document.getElementById('navegacion_administracion').style.display = "block";
-            document.getElementById('navegacion_consulta').style.display = "block";
-            document.getElementById('producto_validar_Usuario').style.display = "block";
-            usuarioValido = true;
-        }
-        if (valor.codigo_rol == 2) {
-            document.getElementById('navegacion_seguridad').style.display = "block";
-        }
-        if (valor.codigo_rol == 3) {
-            document.getElementById('navegacion_administracion').style.display = "block";
-            document.getElementById('producto_validar_Usuario').style.display = "block";
-            usuarioValido = true;
-        }
-        if (valor.codigo_rol == 4) {
-            document.getElementById('navegacion_consulta').style.display = "block";
+
+var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+var permiso;
+var validar = (usuarioRoles) => {
+    console.log('dentro de validar');
+    console.log("usuario Roles");
+    console.log(usuarioRoles);
+    console.log("usuario Acceso");
+    console.log(rolesAcceso);
+    permiso = false;
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+            for (j = 0; j < rolesAcceso.length; j++) {
+                if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
+                    permiso = true;
+                    break;
+                }
+            }
         }
 
     }
-    if (usuarioValido == true) {
+    if (permiso) {
+        console.log("dentro de permiso ");
         obtenerLineas();
+    } else {
+        alert('Alerta!! no estas autorizado para acceder a esta página');
+        var url = $("#RedirectTo").val();
+        location.href = url;
     }
-
 }
 
 
@@ -68,9 +73,7 @@ function addItem() {
     let lineaComidaElegida = document.getElementById('combos');
     let contenido = document.getElementById('contenido');
     let fotoV = document.getElementById('foto');
-    let user = 'karla';
-
-
+    let user = localStorage['user'];
     if (!descripcion.value) {
         console.log('Espacio de descripción requerido');
         descripcion.focus();
@@ -84,6 +87,11 @@ function addItem() {
         console.log('Espacio de contenido requerido');
         contenido.focus();
         verificar = false;
+    } else if (!fotoV.value) {
+        console.log('Espacio de foto requerido');
+        fotoV.focus();
+        verificar = false;
+
     }
     console.log(descripcion.value);
     console.log(lineaComidaElegida.value);
@@ -113,3 +121,15 @@ function addItem() {
     };
 }
 
+
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
+    }
+}

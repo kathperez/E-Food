@@ -110,9 +110,10 @@
             <br>
             <button id="actualizar">Actualizar</button>
             <button id="crear">Nuevo</button>
-        
+
         </div>
     </div>
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Administracion/PrecioProducto.js"></script>
 </body>
 </html>

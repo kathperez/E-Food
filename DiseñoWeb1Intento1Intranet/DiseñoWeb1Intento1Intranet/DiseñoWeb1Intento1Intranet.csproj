@@ -172,7 +172,6 @@
     <Content Include="JS\Administracion\MedioPagoNuevo.js" />
     <Content Include="JS\Administracion\MedioPagoTarjetaAsignar.js" />
     <Content Include="JS\Administracion\MedioPagoVer.js" />
-    <Content Include="JS\Administracion\MedioPagoVer2.js" />
     <Content Include="JS\Administracion\PrecioProducto.js" />
     <Content Include="JS\Administracion\ProductoEditar.js" />
     <Content Include="JS\Administracion\ProductoNuevo.js" />
@@ -189,7 +188,6 @@
     <Content Include="JS\Administracion\TiqueteDescuentoVer.js" />
     <Content Include="JS\Bienvenida.js" />
     <Content Include="JS\Consultas\ConsultaBitacora.js" />
-    <Content Include="JS\Consultas\ConsultaBitacora2.js" />
     <Content Include="JS\Consultas\ConsultaErrorIntra.js" />
     <Content Include="JS\Consultas\ConsultaProducto.js" />
     <Content Include="JS\Seguridad\LoginUsuario.js" />

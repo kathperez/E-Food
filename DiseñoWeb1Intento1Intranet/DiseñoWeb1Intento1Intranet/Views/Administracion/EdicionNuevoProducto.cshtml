@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="~/Content/nav-style.css">
     <link rel="stylesheet" href="~/Content/editar_nuevo_consecutivo.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-    <link href="~/Content/EsconderNav.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">  
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 
 </head>
@@ -111,6 +110,7 @@
             </div>
         </form>
     </div>
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Administracion/ProductoEditar.js"></script>
 </body>
 </html>

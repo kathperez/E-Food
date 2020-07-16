@@ -82,9 +82,8 @@
                     <th>Descripción</th>
                     <th colspan="1">Consecutivo</th>
                     <th colspan="1"></th>
-                </tr>               
+                </tr>
                 <tbody id="contenido">
-
                 </tbody>
             </table>
             <br>
@@ -92,6 +91,8 @@
             <h3><a href='@Url.Action("NuevoConsecutivo", "Administracion") '>NUEVO!</a></h3>
         </div>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Administracion/ConsecutivoVer.js"></script>
 </body>
 </html>

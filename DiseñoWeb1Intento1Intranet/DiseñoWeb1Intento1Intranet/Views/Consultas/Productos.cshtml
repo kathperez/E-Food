@@ -89,7 +89,6 @@
                     <p>
                         Línea:
                         <select name="estado" id="lineas">
-                          
                         </select>
                         <button id="buscar">Seleccionar</button>
                     </p>
@@ -103,7 +102,7 @@
                             <th>Precio Producto</th>
                         </tr>
                     </thead>
-                    <tbody id="contenido">                       
+                    <tbody id="contenido">
                     </tbody>
                 </table>
             </div>
@@ -111,5 +110,7 @@
             <br />
         </div>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
 </body>
 </html>
