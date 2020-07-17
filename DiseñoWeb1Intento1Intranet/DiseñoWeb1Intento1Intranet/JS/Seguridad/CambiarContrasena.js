@@ -54,21 +54,21 @@ function addItem() {
     let pswNueva = document.getElementById('pswNueva');
     let pswConfirmar = document.getElementById('pswConfirmar');
 
-    if (!pswActual.value){
+    if (!pswActual.value) {
         console.log('Espacio requerido');
         pswActual.focus();
         verificar = false;
-    } else if (!pswNueva.value){
+    } else if (!pswNueva.value) {
         console.log('Espacio de contraseña requerido');
         pswNueva.focus();
         verificar = false;
-    } 
-    else if (!pswConfirmar.value){
+    }
+    else if (!pswConfirmar.value) {
         console.log('Espacio de contraseña requerido');
         pswConfirmar.focus();
         verificar = false;
     }
- 
+
 
     console.log(user);
     console.log(pswNueva);

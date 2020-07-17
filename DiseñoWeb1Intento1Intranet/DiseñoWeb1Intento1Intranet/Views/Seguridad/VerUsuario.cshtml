@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    
+
 
 </head>
 <body>
@@ -29,12 +29,12 @@
         </div>
         <div class="navRight">
             <ul>
-                <li id="navegacion_seguridad">
-                    <a href="#">Seguridad</a>
+                <li class="navegacion_administracion" id="navegacion_seguridad">
+                    <a class="lang" key="seguridadTitulo" href="#">Seguridad</a>
                     <ul class="dropdownSeguridad">
-                        <li><a href='@Url.Action("Seguridad", "Usuarios") '>Usuarios</a></li>
-                        <li><a href='@Url.Action("Seguridad", "Roles") '>Roles</a></li>
-                        <li><a href='@Url.Action("Seguridad", "Contrasena") '>Cambiar contraseña</a></li>
+                        <li><a class="lang" key="usuario" href='@Url.Action("VerUsuario", "Seguridad") '>Usuarios</a></li>
+                        <li><a class="lang" key="roles" href='@Url.Action("EditarRol", "Seguridad") '>Roles</a></li>
+                        <li><a class="lang" key="cambiarContrasena" href='@Url.Action("CambiarContrasena", "Seguridad") '>Cambiar contraseña</a></li>
                     </ul>
                 </li>
                 <li>
@@ -98,3 +98,4 @@
     <script src="~/JS/Seguridad/VerUsuario.js"></script>
 </body>
 </html>
+

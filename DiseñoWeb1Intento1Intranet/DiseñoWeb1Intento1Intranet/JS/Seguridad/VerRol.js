@@ -8,7 +8,7 @@
 let ArrUsuarios = [];
 
 //validarUsuario(usuarioRoles);    
-var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+var rolesAcceso = ['Administrador', 'Seguridad'];//Cambiar aquí los roles permitidos
 
 var permiso;
 var validar = (usuarioRoles) => {

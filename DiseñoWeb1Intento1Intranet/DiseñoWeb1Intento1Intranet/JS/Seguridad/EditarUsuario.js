@@ -32,7 +32,7 @@
             codigo.focus();
             verificar = false;
         }
-       
+
         if (verificar) {
             const item = {
                 usuario: usuario.value,
@@ -70,7 +70,7 @@
     }
 
     var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
-    var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+    var rolesAcceso = ['Administrador', 'Seguridad'];//Cambiar aquí los roles permitidos
     var permiso;
     var validar = (usuarioRoles) => {
         console.log('dentro de validar');
@@ -95,7 +95,7 @@
 
         if (permiso) {
             console.log("usuario tiene acceso");
-           
+
 
         } else {
             alert('Alerta!! no estas autorizado para acceder a esta página');
@@ -103,8 +103,8 @@
             location.href = url;
         }
     }
-   
- 
+
+
 
     var init = () => {
         console.log("Imprimiendo el array desde el inicio");
