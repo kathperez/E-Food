@@ -8,7 +8,7 @@
 let ArrTarjetas = [];
 
    //validarUsuario(usuarioRoles);    
-var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+var rolesAcceso = ['Administrador', ];//Cambiar aquí los roles permitidos
 
 var permiso;
 var validar = (usuarioRoles) => {

@@ -77,6 +77,11 @@
             console.log('Espacio de contenido requerido');
             contenido.focus();
             verificar = false;
+        } else if (!fotoV.value) {
+            console.log('Espacio de foto requerido');
+            fotoV.focus();
+            verificar = false;
+
         }
         console.log(descripcion.value);
         console.log(lineaComidaElegida.value);
