@@ -32,6 +32,7 @@ namespace DiseñoWeb1Intento1Intranet.Controllers
         public ActionResult NuevoRol()
         {
             return View();
+            
         }
 
     }
