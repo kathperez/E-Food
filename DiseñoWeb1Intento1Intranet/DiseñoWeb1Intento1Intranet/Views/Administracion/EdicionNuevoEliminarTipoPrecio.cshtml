@@ -30,13 +30,12 @@
         </div>
         <div class="navRight">
             <ul>
-                <li>
+                <li class="navegacion_administracion" id="navegacion_seguridad">
                     <a href="#">Seguridad</a>
                     <ul class="dropdownSeguridad">
-                        <li><a href="../Seguridad/usuarios.html">Usuarios</a></li>
-                        <li><a href="../Seguridad/roles.html">Roles</a></li>
-                        <li><a href="../Seguridad/cambiar-clave.html">Cambiar contraseña</a></li>
-                        <li><a href="../Seguridad/login.html">Login</a></li>
+                        <li><a href='@Url.Action("VerUsuario", "Seguridad") '>Usuarios</a></li>
+                        <li><a href='@Url.Action("EditarRol", "Seguridad") '>Roles</a></li>
+                        <li><a href='@Url.Action("CambiarContrasena", "Seguridad") '>Cambiar contraseña</a></li>
                     </ul>
                 </li>
                 <li>
