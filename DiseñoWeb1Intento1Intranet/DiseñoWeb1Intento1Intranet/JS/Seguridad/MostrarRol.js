@@ -1,4 +1,5 @@
-﻿window.onload = function () {
+﻿
+window.onload = function () {
     console.log("Entró al onload");
     var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
     validar(usuarioRoles);
@@ -34,15 +35,43 @@ var validar = (usuarioRoles) => {
 
     if (permiso) {
         console.log("dentro de permiso ");
-        const URLGet = "https://localhost:44308/api/Usuario";
+        showUsers();
+        const reposBtn = document.getElementById("mostar");
+        reposBtn.onclick = userSelected;
 
-        list(URLGet).catch((e) => console.error(e));
+
 
     } else {
         alert('Alerta!! no estas autorizado para acceder a esta página');
         var url = $("#RedirectTo").val();
         location.href = url;
     }
+}
+
+function showUsers() {
+    var usuarios = localStorage['users'];
+
+    let us = JSON.parse(usuarios);
+    let mapIdUsers = us.map(({ usuario }) => usuario);
+    console.log(mapIdUsers);
+
+
+    let select = document.getElementById('selectUsuario');
+    for (var index = 0; index < mapIdUsers.length; index++) {
+        select.options[select.options.length] = new Option(mapIdUsers[index], index);
+    }
+}
+
+function userSelected() {
+
+
+    let preestado = document.getElementById('selectUsuario')
+    let opcionSel = preestado.options[preestado.selectedIndex].text;
+    console.log(opcionSel);
+
+    const URLGet = "https://localhost:44308/api/UsuarioRol/" + opcionSel;
+
+    list(URLGet).catch((e) => console.error(e));
 }
 
 async function list(Get = "") {
@@ -79,41 +108,29 @@ function request(url) {
 }
 
 function generarTabla(datos) {
-    var contenido = document.querySelector('#contenido');
+    var contenido = document.querySelector('#contenidoRol');
     console.log('Dentro de generar tabla');
     console.log(datos);
-    contenido.innerHTML = ''
+    contenido.innerHTML = '';
     var cont = 0;//se utiliza para obtener indice por editar
     for (let valor of JSON.parse(datos)) {
         contenido.innerHTML +=
             `
         <tr>
-                        <td>${valor.usuario}</td>
-                        <td>${valor.estado}</td>
+                        <td>${valor.descripcion}</td>
+
                         
-                        <td><a  id="${cont}" style="color: dimgrey;" href='/Seguridad/EditarUsuario'>Editar Estado</a>
-                        </td> 
+                        
                       </tr>
         `
         cont = cont + 1;
         ArrUsuarios.push(valor);
-
     }
     console.log("Imprimiendo el array");
     console.log(ArrUsuarios)
     console.log("Imprimiendo índice de array");
     console.log(ArrUsuarios[0])
 }
-$("#contenido").on('click', 'a', function () {
-    var id = $(this).attr('id');
-
-    localStorage.setItem('idUs', id);//Indice seleccionado que se va a editar
-    localStorage.setItem('usuariosArr', JSON.stringify(ArrUsuarios));//ese guarda el arreglo de consecutivos para poder usarlo en otro JS.
-
-});
-
-
-
 
 function salir() {
 
@@ -126,4 +143,3 @@ function salir() {
         location.href = url;
     }
 }
-
