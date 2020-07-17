@@ -87,7 +87,7 @@
                     </tr>
                     <tr>
                         <th>Disponibles:</th>
-                        <td><input type="text" placeholder="Disponibles" name="disponibles"  id="disponibles" required></td>
+                        <td><input type="text" placeholder="Disponibles" name="disponibles" id="disponibles" required></td>
                     </tr>
                     <tr>
                         <th>Descuento:</th>
@@ -99,6 +99,8 @@
             </div>
         </form>
     </div>
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
+
     <script src="~/JS/Administracion/TiqueteDescuentoEditar.js"></script>
 </body>
 </html>

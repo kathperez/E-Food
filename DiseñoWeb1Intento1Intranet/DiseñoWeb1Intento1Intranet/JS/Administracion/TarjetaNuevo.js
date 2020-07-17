@@ -8,7 +8,7 @@ window.onload = function () {
 };
 const uri = "https://localhost:44308/api/Tarjeta";
 
-var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+var rolesAcceso = ['Administrador', ];//Cambiar aquí los roles permitidos
 var permiso;
 var validar = (usuarioRoles) => {
     console.log('dentro de validar');

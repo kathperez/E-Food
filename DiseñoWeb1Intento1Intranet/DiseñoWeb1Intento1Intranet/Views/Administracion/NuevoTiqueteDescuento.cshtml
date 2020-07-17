@@ -98,8 +98,10 @@
                 <br>
                 <button type="submit" id="crear">Crear tiquete descuento</button>
             </div>
-         </form>
+        </form>
     </div>
+    @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
+    @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
 </body>
 </html>
 

@@ -1,10 +1,45 @@
 ﻿
 window.onload = function () {
+    var usuarioRoles = localStorage['rolesUsuario'];//Roles del usuario activo
+    validar(usuarioRoles);
+    var btnSalir = document.getElementById('salir');
+    btnSalir.onclick = salir;
     const reposBtn = document.getElementById("crear");
-    reposBtn.onclick = addItem;
+    reposBtn.onclick = addItem;   
 };
 
 const uri = "https://localhost:44308/api/TiqueteDescuento";
+var rolesAcceso = ['Administrador', 'Mantenimiento'];//Cambiar aquí los roles permitidos
+var permiso;
+var validar = (usuarioRoles) => {
+    console.log('dentro de validar');
+    console.log("usuario Roles");
+    console.log(usuarioRoles);
+    console.log("usuario Acceso");
+    console.log(rolesAcceso);
+    permiso = false;
+    if (usuarioRoles == undefined) {
+        permiso = false;
+    } else {
+        for (i = 0; i < JSON.parse(usuarioRoles).length; i++) {
+            for (j = 0; j < rolesAcceso.length; j++) {
+                if (JSON.parse(usuarioRoles)[i].descripcion == rolesAcceso[j]) {//Si tiene permiso
+                    permiso = true;
+                    break;
+                }
+            }
+        }
+
+    }
+    if (permiso) {
+        console.log("dentro de permiso ");       
+    } else {
+        alert('Alerta!! no estas autorizado para acceder a esta página');
+        var url = $("#RedirectTo").val();
+        location.href = url;
+    }
+}
+
 
 function addItem() {
     event.preventDefault();
@@ -14,7 +49,7 @@ function addItem() {
     let descripcionV = document.getElementById('descripcion');
     let disponibleV = document.getElementById('disponible');
     let descuentoV = document.getElementById('descuento');
-    let user = 'karla';
+    let user = localStorage['user'];
 
     if (!codigoV.value) {
         console.log('Espacio de codigo requerido');
@@ -69,6 +104,18 @@ function addItem() {
                 alert('No se guardó');
             });
         $('#formulario').trigger("reset");
+    }
+}
+
+function salir() {
+
+    var confirmacion = confirm('¿Seguro que desea cerrar sesión?');
+    if (confirmacion == true) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('rolesUsuario');
+        console.log("se eligio eliminar");
+        var url = $("#RedirectToIndex").val();
+        location.href = url;
     }
 }
 
