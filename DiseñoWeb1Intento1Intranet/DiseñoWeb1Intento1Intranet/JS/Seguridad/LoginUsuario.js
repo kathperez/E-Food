@@ -8,6 +8,7 @@
                 usuarios = json_data;
                 console.log("dentro de mostrar");
                 localStorage.setItem('users', JSON.stringify(usuarios));
+                
                // ingresar(json_data);              
                 console.log(json_data);
             })

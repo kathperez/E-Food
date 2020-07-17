@@ -11,7 +11,7 @@ window.onload = function () {
 
 var rolesAcceso = ['Administrador', 'Seguridad'];//Cambiar aquí los roles permitidos
 
-const uri = "https://localhost:44308/api/Usuario";
+const uri = "https://localhost:44308/api/UsuarioRol";
 var permiso;
 var validar = (usuarioRoles) => {
     console.log('dentro de validar');
@@ -49,58 +49,36 @@ function addItem() {
     console.log("dentro de agregar")
     var verificar = true;
     let addUser = document.getElementById('usuario');
-    let addPassword = document.getElementById('contrasena');
-    let addEmail = document.getElementById('email');
-    let addPregunta = document.getElementById('pregunta');
-    let addRespuesta = document.getElementById('respuesta');
-    let addConContrasena = document.getElementById('confirmarContrasena');
+    let preestado = document.getElementById('rol')
+    let addRol = preestado.options[preestado.selectedIndex].text;
+    let addUsuarioAsig = localStorage['user'];
 
 
     if (!addUser.value) {
         console.log('Espacio requerido');
         addUser.focus();
         verificar = false;
-    } else if (!addPassword.value) {
-        console.log('Espacio de contraseña requerido');
-        addPassword.focus();
-        verificar = false;
-    } 
-    else if (!addConContrasena.value) {
-        console.log('Espacio de contraseña requerido');
-        addConContrasena.focus();
-        verificar = false;
     }
-    else if (addPassword.value != addConContrasena.value) {
-
-        console.log('Las contraseñas no coinciden');
-        addPassword.focus();
-        verificar = false;
-    }
-    else if (!addEmail.value) {
-        console.log('Espacio de Email requerido');
-        addEmail.focus();
-        verificar = false;
-    }
-    else if (!addPregunta.value) {
-        console.log('Espacio de Pregunta requerido');
-        addPregunta.focus();
-        verificar = false;
-    } else if (!addRespuesta.value) {
-        console.log('Espacio de Respuesta requerido');
-        addRespuesta.focus();
-        verificar = false;
+    if (addRol == "Administrador") {
+        addRol = 1;
+    } else if (addRol == "Seguridad") {
+        addRol = 2;
+    } else if (addRol == "Mantenimiento") {
+        addRol = 3;
+    } else if (addRol == "Consulta") {
+        addRol = 4;
     }
 
-    console.log(addRespuesta.value);
+    console.log(addUser.value);
+    console.log(addRol);
+    console.log(addUsuarioAsig);
 
     if (verificar) {
         const item = {
-            usuario: addUser.value,
-            contrasena: addPassword.value,
-            email: addEmail.value,
-            pregunta: addPregunta.value,
-            respuesta: addRespuesta.value,
-            estado: "Activo"
+            cod_rol: addRol,
+            usuario_nom: addUser.value,
+            usuario_modificador: addUsuarioAsig
+
         };
 
         fetch(uri, {
@@ -122,20 +100,15 @@ function addItem() {
                 console.error('Unable to add item.', error)
                 alert('No se guardó');
             });
-
         borrar();
     }
 
-    
+
 }
 function borrar() {
 
-    document.getElementById('usuario').value ="";
-    document.getElementById('contrasena').value = "";
-    document.getElementById('email').value = "";
-    document.getElementById('pregunta').value = "";
-    document.getElementById('respuesta').value = "";
-    document.getElementById('confirmarContrasena').value = "";
+    document.getElementById('usuario').value = "";
+
 }
 
 function salir() {

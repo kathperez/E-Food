@@ -194,15 +194,20 @@
     <Content Include="JS\Consultas\ConsultaBitacora.js" />
     <Content Include="JS\Consultas\ConsultaErrorIntra.js" />
     <Content Include="JS\Consultas\ConsultaProducto.js" />
+    <Content Include="JS\Idioma\scriptIdioma.js" />
+    <Content Include="JS\Seguridad\AsignarRol.js" />
     <Content Include="JS\Seguridad\CambiarContrasena.js" />
     <Content Include="JS\Seguridad\EditarUsuario.js" />
     <Content Include="JS\Seguridad\LoginUsuario.js" />
+    <Content Include="JS\Seguridad\MostrarRol.js" />
+    <Content Include="JS\Seguridad\NuevoRol.js" />
     <Content Include="JS\Seguridad\NuevoUsuario.js" />
     <Content Include="JS\Seguridad\RolPermiso.js" />
     <Content Include="JS\Seguridad\VerRol.js" />
     <Content Include="JS\Seguridad\VerUsuario.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="lang.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -262,6 +267,7 @@
     <Content Include="Views\Seguridad\EditarRol.cshtml" />
     <Content Include="Views\Seguridad\VerUsuario.cshtml" />
     <Content Include="Views\Seguridad\CambiarContrasena.cshtml" />
+    <Content Include="Views\Seguridad\NuevoRol.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
