@@ -154,13 +154,17 @@ function eliminar(id) {
     console.log(opcionSele);
     console.log(id);
 
-    var url = 'https://localhost:44308/api/Usuario?rol_cod=' + id + '&nom_usu=' + opcionSele;
+    let restoUrl = 'rol_cod=' + id + '&nom_usu=' + opcionSele;
+
+    console.log(restoUrl);
+
+    var url = 'https://localhost:44308/api/Usuario?' + restoUrl;
     console.log(url);
 
 
     let user = localStorage['user'];
     console.log(user);
-
+    let usuarioLocal = 'kat';
     var data = {
         usuario_modificador: user
     };
