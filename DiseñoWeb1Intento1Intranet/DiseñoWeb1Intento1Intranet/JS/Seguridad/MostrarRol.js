@@ -135,7 +135,7 @@ function generarTabla(datos) {
 $("#contenidoRol").on('click', 'button', function () {
     console.log("Entro al click");
     var id = $(this).attr('id');
-    var confirmacion = confirm('¿Seguro que desea eliminar el tipo de precio?');
+    var confirmacion = confirm('¿Seguro que desea eliminar el rol?');
     if (confirmacion == true) {
         console.log("se eligio eliminar");
         eliminar(id);
@@ -152,13 +152,19 @@ function eliminar(id) {
     let preestado = document.getElementById('selectUsuario')
     let opcionSele = preestado.options[preestado.selectedIndex].text;
     console.log(opcionSele);
+    console.log(id);
 
-    let user = localStorage['user'];
-    var data = {
-        usuario: user
-    };
     var url = 'https://localhost:44308/api/Usuario?rol_cod=' + id + '&nom_usu=' + opcionSele;
     console.log(url);
+
+
+    let user = localStorage['user'];
+    console.log(user);
+
+    var data = {
+        usuario_modificador: user
+    };
+    
 
     fetch(url, {
         method: 'DELETE', // or 'PUT',
@@ -172,8 +178,7 @@ function eliminar(id) {
     }).then(response => response.text())
         .then(text => alert(text))
         .then(() => {
-            const URLGet = "https://localhost:44308/api/TipoPrecio";
-            list(URLGet).catch((e) => console.error(e));
+            
         })
         .catch(err => console.log('error', err));
 }
