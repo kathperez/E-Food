@@ -133,6 +133,7 @@ function generarTabla(datos) {
 }
 
 $("#contenidoRol").on('click', 'button', function () {
+    console.log("Entro al click");
     var id = $(this).attr('id');
     var confirmacion = confirm('¿Seguro que desea eliminar el tipo de precio?');
     if (confirmacion == true) {

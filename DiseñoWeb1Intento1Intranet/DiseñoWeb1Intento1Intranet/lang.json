@@ -23,6 +23,13 @@
     "asignarRoles": "Asignar Roles",
     "seleccioneRol": "Seleccionar Rol...",
     "confirmarAsignacion": "Confirmar Asignación",
+    "ustedEstaEnLogin": "Usted esta en: Iniciar Sesión",
+    "login": "Iniciar Sesión",
+    "contrasena": "Contraseña",
+
+    "ustedEstaEnInicio": "Usted esta en: Inicio",
+    "bienvenidos": "Bienvenidos",
+    "latabola": "La Tabola"
 
 
 
@@ -47,7 +54,20 @@
     "bitacora": "Binnacle",
     "erroresIntranet": "Intranetfehler",
     "administracion": "Verwaltung",
-    "ustedEstaEnRolesDeUsuario": "Sie befinden sich in: Benutzerrollen"
+    "ustedEstaEnRolesDeUsuario": "Sie befinden sich in: Benutzerrollen",
+
+    "asignarRoles": "Rollen zuweisen",
+    "seleccioneRol": "Rolle auswählen...",
+    "confirmarAsignacion": "Zuordnung bestätigen",
+    "ustedEstaEnLogin": "Sie befinden sich in: Anmeldung",
+    "login": "Anmeldung",
+    "contrasena": "Passwort",
+
+
+    "ustedEstaEnInicio": "Sie befinden sich in: Anfang",
+    "bienvenidos": "Herzlich willkommen",
+    "latabola": "Die Tabola"
+
   },
   "en": {
     "logo1": "E-FOOD",
@@ -68,7 +88,20 @@
     "bitacora": "Binnacle",
     "erroresIntranet": "Intranet Errors ",
     "administracion": "Management",
-    "ustedEstaEnRolesDeUsuario": "You are in: User roles"
+    "ustedEstaEnRolesDeUsuario": "You are in: User roles",
+
+
+    "asignarRoles": "Assign roles",
+    "seleccioneRol": "Select Role...",
+    "confirmarAsignacion": "Confirm assignment",
+    "ustedEstaEnLogin": "You are in: Login",
+    "login": "Log in",
+    "contrasena": "Password",
+
+    "ustedEstaEnInicio": "You are in: Home",
+    "bienvenidos": "Welcome",
+    "latabola": "The Tabola"
+
   },
   "it": {
     "logo1": "E-FOOD",
@@ -89,7 +122,18 @@
     "bitacora": "Chiesuola",
     "erroresIntranet": "Errori Intranet",
     "administracion": "Gestione",
-    "ustedEstaEnRolesDeUsuario": "Sei in: Ruoli utente"
+    "ustedEstaEnRolesDeUsuario": "Sei in: Ruoli utente",
+
+    "asignarRoles": "Assegna ruoli",
+    "seleccioneRol": "Seleziona il ruolo...",
+    "confirmarAsignacion": "Conferma incarico",
+    "ustedEstaEnLogin": "Sei in: Accesso",
+    "login": "Accesso",
+    "contrasena": "Parola d'ordine",
+
+    "ustedEstaEnInicio": "Sei in: Inizio",
+    "bienvenidos": "Benvenuto",
+    "latabola": "La Tabola"
   }
 
 
