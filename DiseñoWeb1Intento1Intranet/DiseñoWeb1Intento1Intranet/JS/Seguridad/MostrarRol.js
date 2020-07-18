@@ -7,6 +7,7 @@ window.onload = function () {
     btnSalir.onclick = salir;
 };
 let ArrUsuarios = [];
+var usuarioSeleccionado;
 
 //validarUsuario(usuarioRoles);    
 var rolesAcceso = ['Administrador', 'Seguridad'];//Cambiar aquí los roles permitidos
@@ -36,10 +37,6 @@ var validar = (usuarioRoles) => {
     if (permiso) {
         console.log("dentro de permiso ");
         showUsers();
-        const reposBtn = document.getElementById("mostar");
-        reposBtn.onclick = userSelected;
-
-
 
     } else {
         alert('Alerta!! no estas autorizado para acceder a esta página');
@@ -50,28 +47,27 @@ var validar = (usuarioRoles) => {
 
 function showUsers() {
     var usuarios = localStorage['users'];
-
     let us = JSON.parse(usuarios);
     let mapIdUsers = us.map(({ usuario }) => usuario);
     console.log(mapIdUsers);
-
-
     let select = document.getElementById('selectUsuario');
     for (var index = 0; index < mapIdUsers.length; index++) {
         select.options[select.options.length] = new Option(mapIdUsers[index], index);
     }
+    const reposBtn = document.getElementById("mostar");
+    reposBtn.onclick = userSelected;
+    
 }
 
 function userSelected() {
-
-
-    let preestado = document.getElementById('selectUsuario')
-    let opcionSel = preestado.options[preestado.selectedIndex].text;
-    console.log(opcionSel);
-
+    let preestado = document.getElementById('selectUsuario');
+    console.log('dentro de user selected');
+    let opcionSel = preestado.options[preestado.selectedIndex].text;   
     const URLGet = "https://localhost:44308/api/UsuarioRol/" + opcionSel;
-
-    list(URLGet).catch((e) => console.error(e));
+    list(URLGet).catch((e) => console.error(e));   
+    usuarioSeleccionado = opcionSel;
+    
+  
 }
 
 async function list(Get = "") {
@@ -134,11 +130,11 @@ function generarTabla(datos) {
 
 $("#contenidoRol").on('click', 'button', function () {
     console.log("Entro al click");
-    var id = $(this).attr('id');
+    var id = $(this).attr('id');  
     var confirmacion = confirm('¿Seguro que desea eliminar el rol?');
     if (confirmacion == true) {
-        console.log("se eligio eliminar");
-        eliminar(id);
+        console.log("se eligio eliminar");      
+        eliminar(id, usuarioSeleccionado);
     } else {
 
     }
@@ -147,28 +143,15 @@ $("#contenidoRol").on('click', 'button', function () {
 });
 
 
-function eliminar(id) {
-
-    let preestado = document.getElementById('selectUsuario')
-    let opcionSele = preestado.options[preestado.selectedIndex].text;
-    console.log(opcionSele);
-    console.log(id);
-
-    let restoUrl = 'rol_cod=' + id + '&nom_usu=' + opcionSele;
-
-    console.log(restoUrl);
-
-    var url = 'https://localhost:44308/api/Usuario?' + restoUrl;
-    console.log(url);
-
-
-    let user = localStorage['user'];
-    console.log(user);
-    let usuarioLocal = 'kat';
+function eliminar(id,preestado) {
+    console.log(preestado);
+    let opcionSele = id;  
+    let user = 'karla';
     var data = {
         usuario_modificador: user
     };
-    
+    var url = "https://localhost:44308/api/UsuarioRol?rol_cod=" + opcionSele + "&nom_usu=" + preestado;
+    console.log(url);
 
     fetch(url, {
         method: 'DELETE', // or 'PUT',
@@ -182,7 +165,8 @@ function eliminar(id) {
     }).then(response => response.text())
         .then(text => alert(text))
         .then(() => {
-            
+           // const URLGet = "https://localhost:44308/api/TipoPrecio";
+           // list(URLGet).catch((e) => console.error(e));
         })
         .catch(err => console.log('error', err));
 }
