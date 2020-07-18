@@ -97,6 +97,7 @@
             </div>
         </form>
     </div>
+    @Html.Hidden("RedirectToVerUsuario", Url.Action("VerUsuario", "Seguridad"))
     @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))
     @Html.Hidden("RedirectToIndex", Url.Action("Index", "Home"))
     <script src="~/JS/Seguridad/EditarUsuario.js"></script>

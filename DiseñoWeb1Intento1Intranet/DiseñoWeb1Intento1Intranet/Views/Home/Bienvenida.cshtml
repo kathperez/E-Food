@@ -8,10 +8,11 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="~/Content/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="~/Content/EsconderNav.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/JS/Bienvenida.js"></script>
+    <script src="~/JS/Idioma/scriptIdioma.js"></script>
 </head>
 <body>
     <nav>
@@ -26,6 +27,16 @@
         </div>
         <div class="navRight">
             <ul>
+                <li id="navegacion_idioma">
+                    <a href="#">LANG</a>
+                    <ul class="">
+                        <li><a class="translate" id="es">Español</a></li>
+                        <li><a class="translate" id="en">English</a></li>
+                        <li><a hres="" class="translate" id="dt">Dutch</a></li>
+                        <li><a hres="" class="translate" id="it">Italiano</a></li>
+                    </ul>
+                </li>
+
                 <li class="navegacion_administracion" id="navegacion_seguridad">
                     <a class="lang" key="seguridadTitulo" href="#">Seguridad</a>
                     <ul class="dropdownSeguridad">
@@ -33,27 +44,26 @@
                         <li><a class="lang" key="roles" href='@Url.Action("EditarRol", "Seguridad") '>Roles</a></li>
                         <li><a class="lang" key="cambiarContrasena" href='@Url.Action("CambiarContrasena", "Seguridad") '>Cambiar contraseña</a></li>
                     </ul>
-
                 </li>
                 <li class="navegacion_administracion" id="navegacion_administracion">
-                    <a href="#">Administración</a>
+                    <a class="lang" key="administracion" href="#">Administración</a>
                     <ul class="dropdownAdministracion">
-                        <li><a href='@Url.Action("Consecutivos", "Administracion") '>Consecutivos</a></li>
-                        <li><a href='@Url.Action("TipoPrecio", "Administracion") '>Tipos de Precio</a></li>
-                        <li><a href='@Url.Action("Tarjetas", "Administracion") '>Tarjetas de Crédito o Débito</a></li>
-                        <li><a href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
-                        <li><a href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
-                        <li><a href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
-                        <li><a href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
+                        <li><a class="lang" key="consecutivos" href='@Url.Action("Consecutivos", "Administracion") '>Consecutivos</a></li>
+                        <li><a class="lang" key="tipoPrecio" href='@Url.Action("TipoPrecio", "Administracion") '>Tipos de Precio</a></li>
+                        <li><a class="lang" key="tarjetas" href='@Url.Action("Tarjetas", "Administracion") '>Tarjetas de Crédito o Débito</a></li>
+                        <li><a class="lang" key="medioPago" href='@Url.Action("MedioPago", "Administracion") '>Medios de Pago</a></li>
+                        <li><a class="lang" key="tiqueteDescuento" href='@Url.Action("TiqueteDescuento", "Administracion") '>Tiquetes de Descuento</a></li>
+                        <li><a class="lang" key="lineaComida" href='@Url.Action("LineaComida", "Administracion") '>Lineas de Comidas</a></li>
+                        <li><a class="lang" key="productos" href='@Url.Action("Productos", "Administracion") '>Productos</a></li>
                     </ul>
                 </li>
                 <li class="navegacion_consulta" id="navegacion_consulta">
-                    <a href="#">Consultas</a>
+                    <a class="lang" key="consultas" href="#">Consultas</a>
                     <ul class="dropdownConsulta">
-                        <li><a href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
-                        <li><a href='@Url.Action("Productos", "Consultas") '>Productos</a></li>
-                        <li><a href='@Url.Action("Bitacora", "Consultas") '>Bitácora</a></li>
-                        <li><a href='@Url.Action("ErroresIntra", "Consultas") '>Errores Intranet</a></li>
+                        <li><a class="lang" key="pedidos" href='@Url.Action("Pedidos", "Consultas") '>Pedidos</a></li>
+                        <li><a class="lang" key="productos" href='@Url.Action("Productos", "Consultas") '>Productos</a></li>
+                        <li><a class="lang" key="bitacora" href='@Url.Action("Bitacora", "Consultas") '>Bitácora</a></li>
+                        <li><a class="lang" key="erroresIntranet" href='@Url.Action("ErroresIntra", "Consultas") '>Errores Intranet</a></li>
                     </ul>
                 </li>
                 <li class="door">
@@ -68,12 +78,12 @@
         </div>
     </nav>
     <div class="navLocation">
-        <p>Usted esta en: Inicio</p>
+        <p class="lang" key="ustedEstaEnInicio">Usted esta en: Inicio</p>
     </div>
     <div class="container">
         <div class="content">
-            <h1>BIENVENIDOS/AS</h1>
-            <h2>La Tabola</h2>
+            <h1 class="lang" key="bienvenidos">BIENVENIDOS</h1>
+            <h2 class="lang" key="latabola">La Tabola</h2>
         </div>
     </div>
     @Html.Hidden("RedirectTo", Url.Action("Bienvenida", "Home"))

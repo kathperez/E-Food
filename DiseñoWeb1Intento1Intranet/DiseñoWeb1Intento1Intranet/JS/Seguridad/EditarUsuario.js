@@ -52,7 +52,10 @@
             }).then(response => response.text())
                 .then(text => alert(text))
                 .catch(err => console.log('error', err));
-            $('#formulario').trigger("reset");
+            
+
+            var urli = $("#RedirectToVerUsuario").val();
+            location.href = urli;
 
         }
     }
