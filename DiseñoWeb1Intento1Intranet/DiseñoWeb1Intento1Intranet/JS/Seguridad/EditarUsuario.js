@@ -53,8 +53,7 @@
                 .then(text => alert(text))
                 .catch(err => console.log('error', err));
             $('#formulario').trigger("reset");
-            var urlOut = $("#RedirectToVerUsuario").val();
-            location.href = urlOut;
+
         }
     }
     function salir() {
