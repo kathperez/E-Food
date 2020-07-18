@@ -53,7 +53,8 @@ function addItem() {
     let addPregunta = document.getElementById('pregunta');
     let addRespuesta = document.getElementById('respuesta');
     let addConContrasena = document.getElementById('confirmarContrasena');
-
+    var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+   
 
     if (!addUser.value) {
         console.log('Espacio requerido');
@@ -79,6 +80,10 @@ function addItem() {
         console.log('Espacio de Email requerido');
         addEmail.focus();
         verificar = false;
+    } else if (!expresion.test(addEmail.value)) {
+        alert('Dirección de correo inválida');
+        addEmail.focus();
+        verificar = false;    
     }
     else if (!addPregunta.value) {
         console.log('Espacio de Pregunta requerido');

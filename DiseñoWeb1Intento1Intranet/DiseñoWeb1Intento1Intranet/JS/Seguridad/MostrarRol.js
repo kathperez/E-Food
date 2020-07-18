@@ -118,7 +118,7 @@ function generarTabla(datos) {
             `
         <tr>
                         <td>${valor.descripcion}</td>
-
+                        <td><button  id="${valor.codigo_rol}" style="color: dimgrey;" href="" >Eliminar</button></td>
                         
                         
                       </tr>
@@ -130,6 +130,51 @@ function generarTabla(datos) {
     console.log(ArrUsuarios)
     console.log("Imprimiendo índice de array");
     console.log(ArrUsuarios[0])
+}
+
+$("#contenidoRol").on('click', 'button', function () {
+    var id = $(this).attr('id');
+    var confirmacion = confirm('¿Seguro que desea eliminar el tipo de precio?');
+    if (confirmacion == true) {
+        console.log("se eligio eliminar");
+        eliminar(id);
+    } else {
+
+    }
+    //  load();
+
+});
+
+
+function eliminar(id) {
+
+    let preestado = document.getElementById('selectUsuario')
+    let opcionSele = preestado.options[preestado.selectedIndex].text;
+    console.log(opcionSele);
+
+    let user = localStorage['user'];
+    var data = {
+        usuario: user
+    };
+    var url = 'https://localhost:44308/api/Usuario?rol_cod=' + id + '&nom_usu=' + opcionSele;
+    console.log(url);
+
+    fetch(url, {
+        method: 'DELETE', // or 'PUT',
+        //mode: 'no-cors',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            //'Access-Control-Allow-Origin':'http://127.0.0.1:5500'
+            'Access-Control-Allow-Origin': 'https://localhost'
+        }
+    }).then(response => response.text())
+        .then(text => alert(text))
+        .then(() => {
+            const URLGet = "https://localhost:44308/api/TipoPrecio";
+            list(URLGet).catch((e) => console.error(e));
+        })
+        .catch(err => console.log('error', err));
 }
 
 function salir() {

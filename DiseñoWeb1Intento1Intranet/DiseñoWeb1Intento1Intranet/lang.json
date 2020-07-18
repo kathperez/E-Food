@@ -18,8 +18,14 @@
     "pedidos": "Pedidos",
     "bitacora": "Bitácora",
     "erroresIntranet": "Errores Intranet",
+    "ustedEstaEnRolesDeUsuario": "Usted esta en: Roles de usuario",
 
-    "ustedEstaEnRolesDeUsuario": "Usted esta en: Roles de usuario"
+    "asignarRoles": "Asignar Roles",
+    "seleccioneRol": "Seleccionar Rol...",
+    "confirmarAsignacion": "Confirmar Asignación",
+
+
+
   },
 
   "dt": {
@@ -75,15 +81,15 @@
     "consecutivos": "Di fila",
     "tarjetas": " Carte di credito o debito",
     "medioPago": "Modalità di pagamento",
-    "tiqueteDescuento": "Discount Tickets",
-    "lineaComida": "Food lines",
-    "productos": "Products",
-    "consultas": "Queries",
-    "pedidos": "Orders",
-    "bitacora": "Binnacle",
-    "erroresIntranet": "Intranet Errors ",
+    "tiqueteDescuento": "Biglietto scontato",
+    "lineaComida": "Linea alimentare",
+    "productos": "Prodotti",
+    "consultas": "Indagini",
+    "pedidos": "Ordini",
+    "bitacora": "Chiesuola",
+    "erroresIntranet": "Errori Intranet",
     "administracion": "Gestione",
-    "ustedEstaEnRolesDeUsuario": "You are in: User roles"
+    "ustedEstaEnRolesDeUsuario": "Sei in: Ruoli utente"
   }
 
 
